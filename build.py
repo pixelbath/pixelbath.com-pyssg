@@ -5,8 +5,9 @@ from cmarkgfm.cmark import Options as cmarkgfmOptions
 import frontmatter
 import jinja2
 import highlighting
-
-import pixelbathdark
+from shutil import copy
+from pathlib import Path
+# import pixelbathdark
 
 sources = pathlib.Path('.').glob('src/*.md')
 output_folder = './output'
@@ -31,12 +32,15 @@ for source in sources:
         extensions=['table', 'autolink'],
         options=cmarkgfmOptions.CMARK_OPT_UNSAFE
     )
+    # set up post path
+    Path("{}/{}/".format(output_folder, source.stem)).mkdir(parents=True, exist_ok=True)
+
     # highlight here
     content = highlighting.highlight(content)
 
     # addtl pre-parsing of html
     post['stem'] = source.stem
-    path = pathlib.Path("{}/{}.html".format(output_folder, post['stem']))
+    path = pathlib.Path("{}/{}/index.html".format(output_folder, post['stem']))
     template = jinja_env.get_template('post.html')
     rendered = template.render(post=post, content=content)
     
@@ -45,3 +49,6 @@ for source in sources:
     # write syntax highlighting stylesheet
     css = highlighting.get_style_css('native')
     pathlib.Path("{}/static/pygments.css".format(output_folder)).write_text(css)
+
+    # copy over static stylesheet
+    copy('./templates/style.css', "{}/static/".format(output_folder))
