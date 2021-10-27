@@ -43,6 +43,9 @@ for source in sources:
     path = pathlib.Path("{}/{}/index.html".format(output_folder, post['stem']))
     template = jinja_env.get_template('post.html')
     rendered = template.render(post=post, content=content)
+
+    # wtf
+    rendered = rendered.replace('×', '&times;')
     
     path.write_text(rendered)
 
