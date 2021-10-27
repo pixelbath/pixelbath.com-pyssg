@@ -1,3 +1,4 @@
+
 import os
 import pathlib
 import cmarkgfm
@@ -9,10 +10,11 @@ from shutil import copy, copytree
 from pathlib import Path
 # import pixelbathdark
 
-sources = pathlib.Path('.').glob('src/*.md')
+sources = pathlib.Path('.').glob('src/posts/*.md')
 output_folder = './output'
 output_static = output_folder + '/static'
 output_images = output_folder + '/images'
+webroot = ''
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader('templates'),
@@ -46,6 +48,10 @@ for source in sources:
 
     # wtf
     rendered = rendered.replace('×', '&times;')
+
+    # TODO: make this configurable
+    rendered = rendered.replace('"/images', '"{}/images'.format(webroot))
+    rendered = rendered.replace('"/static', '"{}/static'.format(webroot))
     
     path.write_text(rendered)
 
