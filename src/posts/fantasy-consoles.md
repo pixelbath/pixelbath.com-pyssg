@@ -9,7 +9,7 @@ I'd been meaning to write for my blog, since I'm now posting more regularly on T
 
 ## Fantasy Consoles?
 
-While there are differing opinions on exactly what constitutes a fantasy console, the basic idea is that it's a game development platform for hardware that doesn't exist. In some cases, there are entire systems dedicated to maintaining the illusion that somewhere in an alternative universe, these video game consoles could have existed.
+While there are differing opinions on exactly _what_ constitutes a fantasy console, the basic idea is that it's a game development platform for hardware that doesn't exist. In some cases, there are entire _systems_ dedicated to maintaining the illusion that somewhere in an alternative universe, these video game consoles could have existed.
 
 ## Why Fantasy Consoles?
 
