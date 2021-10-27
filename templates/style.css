@@ -1,0 +1,33 @@
+body {
+    font-family: Calibri,Gill Sans,Arial,sans-serif;
+    font-size: 12pt;
+}
+p {
+    color: #333;
+}
+h2 {
+    color: #666;
+    font-size: 14pt;
+    font-weight: normal;
+}
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.alignright {
+    float: right;
+    margin-left: 0.7em;
+}
+.image-caption {
+    background-color: #d5d5d5;
+    text-align: center;
+    width: 340px;
+}
+.image-caption img {
+    margin-top: 3px;
+}
+.image-caption p {
+    margin: 0.5em;
+    color: #333;
+}

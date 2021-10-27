@@ -5,7 +5,7 @@ from cmarkgfm.cmark import Options as cmarkgfmOptions
 import frontmatter
 import jinja2
 import highlighting
-from shutil import copy
+from shutil import copy, copytree
 from pathlib import Path
 # import pixelbathdark
 
@@ -52,3 +52,6 @@ for source in sources:
 
     # copy over static stylesheet
     copy('./templates/style.css', "{}/static/".format(output_folder))
+
+    # copy static folders that need to be in the output
+    copytree('./src/images', "{}/images".format(output_folder), dirs_exist_ok=True)

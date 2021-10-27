@@ -9,3 +9,8 @@ Thanks, Thea!
 ## Build
 * `python build.py`
 * Site will be in the `/output` folder
+
+## TODO
+* Base path to re-path all images to a common root
+    * will also need to parse relative/absolute image links in MD
+    

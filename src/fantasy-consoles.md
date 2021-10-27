@@ -15,7 +15,13 @@ While there are differing opinions on exactly what constitutes a fantasy console
 
 The most appealing aspect of developing on these platforms is the artificially-imposed constraint that working within a proscribed set of parameters affords. That's a mouthful, but it'd probably be simpler to explain the idea with some practical examples.
 
-<img src="./images/jelpi_demo.gif" alt="Pico-8 demo cart" align="right" />
+<div class="image-caption alignright">
+
+![Pico-8 Demo Cart](../images/jelpi_demo.gif)
+
+Pico-8 demo cart
+</div>
+
 Let's take the first and probably most well-known fantasy console out there, Pico-8. If the Pico-8 system were a real console, it would have lower color specs and resolution than a Game Boy Color with two less buttons. Its specs are as follows:
 
 **Display resolution:** 128×128 pixels, 16 pre-set colors (through an additional palette 16 additional colors [have been discovered](https://www.lexaloffle.com/bbs/?tid=35253))  
@@ -28,7 +34,15 @@ Cartridges for this platform are stored in the lower bits of the color channels 
 
 While you'd think that being limited to 128×128 pixels with only 16 colors at a time is fairly limiting, the community itself has made the platform an overwhelming success, and they continue to push out amazing games using a highly constrained format.
 
+<div class="image-caption aligncenter">
+
+[![Virtua Racing](../images/pico8-virtuaracing2.gif)](https://freds72.itch.io/virtua-racing)
+[![Dank Tomb](../images/pico8-danktomb2.gif)](https://krajzeg.itch.io/dank-tomb)
+[![League of Pico](../images/pico8-leagueofpico2.gif)](https://wombart.itch.io/league-of-pico)
+[![Low Mem Sky](../images/pico8-lowmemsky2.gif)](https://www.lexaloffle.com/bbs/?tid=32724)
+
 Some example Pico-8 games (click each to visit)
+</div>
 
 ## More Fantasy Consoles
 
