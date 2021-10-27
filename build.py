@@ -47,6 +47,7 @@ for source in sources:
     rendered = template.render(post=post, content=content)
 
     # wtf
+    rendered = rendered.replace('…', '&mldr;')
     rendered = rendered.replace('×', '&times;')
 
     # TODO: make this configurable
