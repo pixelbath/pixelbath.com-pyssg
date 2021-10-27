@@ -13,4 +13,14 @@ Thanks, Thea!
 ## TODO
 * Base path to re-path all images to a common root
     * will also need to parse relative/absolute image links in MD
-    
+* Emoji plugin
+* RSS
+* Keys plugin
+    * Update to exclude code blocks like RewriteRules
+* Paths for things like:
+    * Tutorials
+    * About
+    * Work - maybe make this a single page
+* Image resizing
+    * To theme?
+    * To spec?
