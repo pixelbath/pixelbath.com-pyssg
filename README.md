@@ -24,3 +24,9 @@ Thanks, Thea!
 * Image resizing
     * To theme?
     * To spec?
+* Link classes - buttons, specifically
+* Fix/implement functionality or content for:
+    * clear-photoshops-swatch-palette - styled button icon
+    * host-based-ad-blocking - PHP snippet
+    * generative-art-google-logo - image captions
+    * the-importance-of-order - image resizing/linking (if necessary, maybe just restrict size unless explicitly linking higher res)
