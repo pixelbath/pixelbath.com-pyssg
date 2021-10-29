@@ -46,15 +46,11 @@ for source in sources:
     template = jinja_env.get_template('post.html')
     rendered = template.render(post=post, content=content)
 
-    # wtf
-    rendered = rendered.replace('…', '&mldr;')
-    rendered = rendered.replace('×', '&times;')
-
     # TODO: make this configurable
     rendered = rendered.replace('"/images', '"{}/images'.format(webroot))
     rendered = rendered.replace('"/static', '"{}/static'.format(webroot))
     
-    path.write_text(rendered)
+    path.write_text(rendered, encoding="utf-8")
 
     # write syntax highlighting stylesheet
     css = highlighting.get_style_css('native')
