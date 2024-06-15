@@ -9,7 +9,7 @@ Hey everybody, just a quick reminder **that the singular form of vertices is _ve
 
 <div class="image-caption alignright">
 
-![the singular form of "vertices" is "vertex"](/images/vertices-wrong-word.png)
+![the singular form of "vertices" is "vertex"](../images/vertices-wrong-word.png)
 
 </div>
 

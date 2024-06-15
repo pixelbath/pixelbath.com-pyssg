@@ -7,7 +7,7 @@ tags: clear, palette, photoshop, swatch, swatches
 
 <div class="image-caption alignright">
 
-![the singular form of "vertices" is "vertex"](/images/photoshop-swatch-palette.png)
+![the singular form of "vertices" is "vertex"](../images/photoshop-swatch-palette.png)
 
 Everybody wants a rainbow, apparently.
 </div>

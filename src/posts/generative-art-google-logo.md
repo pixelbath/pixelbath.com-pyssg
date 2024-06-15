@@ -13,7 +13,7 @@ Hope you like it!
 
 <div class="image-caption aligncenter">
 
-![Google logo rendered in circles](/images/google-logo-generative.jpg)
+![Google logo rendered in circles](../images/google-logo-generative.jpg)
 
 Great Googly Moogly!
 </div>

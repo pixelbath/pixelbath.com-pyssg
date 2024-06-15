@@ -8,7 +8,7 @@ tags: pdf, php
 
 <div class="image-caption alignright">
 
-![PDFs are easy! Like riding a...oh.](/images/pdf-bike-crash.jpg)
+![PDFs are easy! Like riding a...oh.](../images/pdf-bike-crash.jpg)
 
 PDFs are easy! Like riding a...oh.
 </div>
@@ -59,7 +59,7 @@ It requires FPDF, but also claims to be able to use TCPDF instead? I don't know.
 
 <div class="alignright">
 
-!['Automating' comes from the roots 'auto-' meaning 'self-', and 'mating', meaning 'screwing'.](/images/xkcd-automation.png)
+!['Automating' comes from the roots 'auto-' meaning 'self-', and 'mating', meaning 'screwing'.](../images/xkcd-automation.png)
 
 </div>
 

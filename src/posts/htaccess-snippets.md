@@ -9,7 +9,7 @@ Here are some .htaccess snippets I've had to use, and if you run your own site, 
 
 **Moved from one URL to another:** My old blog url used to be verbose.pixelbath.com, and before that was pixelbath.com/verbose. Setting aside the notion that this blog moves around too much, the following snippet…
 
-```
+```apacheconf
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^verbose [NC]
 RewriteRule ^(.*)$ https://www.pixelbath.com/blog/ [R=301,L]
@@ -19,7 +19,7 @@ RewriteRule ^(.*)$ https://www.pixelbath.com/blog/ [R=301,L]
 
 **Using a single file to handle all URL requests:** If you've used almost any PHP <acronym title="Content Management System">CMS</acronym> or <acronym title="Model-View-Controller">MVC</acronym> framework such as CodeIgniter or CakePHP, you've probably used something like this for “search friendly URLs”:
 
-```
+```apacheconf
 RewriteEngine On
 RewriteBase /blog/
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -33,7 +33,7 @@ Once it passes the two conditions (a request in `/blog/` that is not a physical 
 
 **Stop image and/or content hotlinking:** Some netizens are either not savvy with the way the Internet works, or don't give a crap because idiocy prefers the low-hanging fruit. Either way, I've actually got a few snippets for this purpose.
 
-```
+```apacheconf
 RewriteEngine On
 RewriteCond %{HTTP_REFERER} !^http://(.+\.)?myspace.com [NC,OR]
 RewriteCond %{HTTP_REFERER} !^http://(.+\.)?blogspot.com [NC]
@@ -42,7 +42,7 @@ RewriteRule ^.*$ http://www.yourdomain.com/ [R,L]
 
 The preceding snippet will block specific websites and their subdomains from hotlinking from your site, but will allow any other site not specified in your `.htaccess` file to do so. If you'd prefer to stick another image in place of the hotlinked one, this is easily done:
 
-```
+```apacheconf
 RewriteEngine On
 RewriteCond %{HTTP_REFERER} !^http://(.+\.)?yourdomain\.com/ [NC]
 RewriteCond %{HTTP_REFERER} !^$
@@ -53,7 +53,7 @@ This one will take any request with a referer not originating from your domain, 
 
 If you'd prefer to be plain and simple though, you can just set HTTP code 403 (Forbidden) on any image for any of the rewrites in this section. Simply replace the `RewriteRule` of each with:
 
-```
+```apacheconf
 RewriteRule .*\.(jpe?g|gif|bmp|png)$ - F
 ```
 

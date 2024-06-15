@@ -32,10 +32,10 @@ I only found the clrmamepro iNES header config far later than the rest of this i
 </detector>
 ```
 
-Basically, take this to mean we're starting at offset 0x10 and reading to EOF (NES files aren't larger than 0x4e4553 bytes). Once I did this, my CRC32 checks started working. I'd normally stop there, but it looks like my MD5 and SHA-1 hashes are wrong. Adding the entire file back in fixes this, so…I'm not really sure why we're bothering to trim the header for only one check.
+Basically, take this to mean we're starting at offset `0x10` and reading to EOF (NES files aren't larger than `0x4e4553` bytes). Once I did this, my CRC32 checks started working. I'd normally stop there, but it looks like my MD5 and SHA-1 hashes are wrong. Adding the entire file back in fixes this, so…I'm not really sure why we're bothering to trim the header for only one check.
 
 To sum up:
 
-* **CRC32**:  0x10 through EOF
+* **CRC32**:  `0x10` through EOF
 * **MD5**:  entire file
 * **SHA-1**: entire file

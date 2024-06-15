@@ -21,7 +21,8 @@ I thought that there must be some way to preserve a comment when compiling. Sure
 
 To preserve a CSS comment in SimpLESS (not that this will not work using the Javascript version, as WordPress will not find a `style.less` file), simply put an exclamation point after the initial comment delimiter, like so:
 
-```/*!
+```css
+/*!
 Theme Name: My Super-Cool Theme
 Theme URI: https://www.pixelbath.com/
 Description: Blah blah blah...

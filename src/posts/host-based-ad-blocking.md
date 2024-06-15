@@ -24,7 +24,7 @@ I created a page that shows the word "Blocked" and the hostname instead of the A
 
 To get our page handling all these misdirected requests, we'll use some basic URL rewriting. You may need to adjust the example to suit your development environment, as this will take over all requests to your local server. This is the .htaccess file I have on my development machine's DocumentRoot:
 
-```
+```apacheconf
 RewriteEngine on
 
 RewriteCond %{HTTP_HOST} !^localhost* [NC]
