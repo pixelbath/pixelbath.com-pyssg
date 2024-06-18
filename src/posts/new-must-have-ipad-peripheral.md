@@ -16,7 +16,6 @@ Based on a conversation with a buddy this morning:
 
 <div class="image-caption aligncenter">
 
-![iStylus](../images/istylus2.jpg)
-
+<img alt="iStylus" src="../images/istylus2.jpg" />
 iDistressed: Only $149.99!
 </div>

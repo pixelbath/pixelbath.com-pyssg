@@ -7,9 +7,7 @@
 While you may or may not care about the mathematical uses of isometric projections, for the purposes of this guide the term "isometric" will apply to the style of art.
 
 <div class="image-caption aligncenter">
-
-![Isometric games](../../images/isometric-pixel-art/isometric-games.png)
-
+<img alt="Isometric games" src="../../images/isometric-pixel-art/isometric-games.png" />
 1.2: Some isometric games: Q-Bert, Zaxxon, Diablo.
 </div>
 
@@ -20,9 +18,7 @@ This introduction contains both a technical definition of isometric art, but mor
 ### Isometry
 
 <div class="image-caption aligncenter">
-
-![Axonometric Projection](../../images/isometric-pixel-art/467px-Axonometric_projection.svg_.png)
-
+<img alt="Axonometric Projection" src="../../images/isometric-pixel-art/467px-Axonometric_projection.svg_.png" />
 1.1: Axonometric projection. Totally clear now, right?
 </div>
 
@@ -49,9 +45,7 @@ Let's create some pixel art!
 Chances are you've got an idea of what you want to do already, but try and keep some constraints in mind. Because of the nature of isometric art, most pieces will be from a partially-overhead view, and there will be no perspective distortion or natural horizon. What this means is that while everything has the illusion of perspective, depth cues are produced by the surrounding.
 
 <div class="image-caption aligncenter">
-
-![Optical illusions - If this text is being read to you, the feeling of viewing an optical illusion is like the combined sound of two harmonized tones resonating in different ways depending on which tone you focus on](../../images/isometric-pixel-art/depth-cues.png)
-
+<img alt="Optical illusions - If this text is being read to you, the feeling of viewing an optical illusion is like the combined sound of two harmonized tones resonating in different ways depending on which tone you focus on" src="../../images/isometric-pixel-art/depth-cues.png" />
 Without depth cues, we end up with ambiguous figures.
 </div>
 

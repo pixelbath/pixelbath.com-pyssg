@@ -8,7 +8,7 @@ tags: pdf, php
 
 <div class="image-caption alignright">
 
-![PDFs are easy! Like riding a...oh.](../images/pdf-bike-crash.jpg)
+<img alt="PDFs are easy! Like riding a...oh." src="../images/pdf-bike-crash.jpg" />
 
 PDFs are easy! Like riding a...oh.
 </div>
@@ -58,9 +58,7 @@ It requires FPDF, but also claims to be able to use TCPDF instead? I don't know.
 
 
 <div class="alignright">
-
-!['Automating' comes from the roots 'auto-' meaning 'self-', and 'mating', meaning 'screwing'.](../images/xkcd-automation.png)
-
+<img alt="'Automating' comes from the roots 'auto-' meaning 'self-', and 'mating', meaning 'screwing'." src="../images/xkcd-automation.png" />
 </div>
 
  In the end, I copped out and avoided the PDF generation entirely. Starting from an SVG exported from Illustrator, I'm stepping through the textual fields with DOMDocument and replacing the text before it's sent to the browser. The output is saved directly to the client's disk as an SVG file. When that SVG file is dragged into Illustrator, it's good to go. Illustrator includes glyph information with the SVG for its own use, so fonts are already set up and correct. I can then just save the file as a PDF with no modifications.

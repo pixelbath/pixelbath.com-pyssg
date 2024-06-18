@@ -7,9 +7,7 @@
 The most important element you need to know about in isometric art is how the basic line works. What truly makes isometric art is the scale and orientation of the linework. Without touching too much on theory behind isometric perspective, here is how to draw a basic isometric straight line:
 
 <div class="image-caption aligncenter">
-
-![The isometric line](../../images/isometric-pixel-art/isometric-line.png)
-
+<img alt="The isometric line" src="../../images/isometric-pixel-art/isometric-line.png" />
 2.1: The isometric line.
 </div>
 
@@ -22,18 +20,14 @@ The 2:1 rule uses this basic concept of every single pixel drawn in any directio
 In our isometric drawing, the perspective of this line works out to 26.565&deg;, which is unimportant for our purposes. True isometric projections use lines at 30&deg;, but not only will this make our drawings appear stretched vertically, it's incredibly difficult to work with. The next example is 30&deg;, and while it _almost_ looks decent, it's not straight and will look poor when used across an entire drawing.
 
 <div class="image-caption aligncenter">
-
-![A 30-degree line](../../images/isometric-pixel-art/isometric-line-wrong.png)
-
+<img alt="A 30-degree line" src="../../images/isometric-pixel-art/isometric-line-wrong.png" />
 2.2: A true 30&deg; line, but too ugly for our needs.
 </div>
 
 There are exceptions to our perpendicular line rule, but they are mostly special cases, and you will learn later when they are most useful. Note in figure 1.3 below that all the lines aside from the purely vertical, horizontal, and diagonal lines, all of them are using the 2:1 rule.
 
 <div class="image-caption aligncenter">
-
-![Isometric line examples](../../images/isometric-pixel-art/isometric-line-examples.png)
-
+<img alt="Isometric line examples" src="../../images/isometric-pixel-art/isometric-line-examples.png" />
 2.3: Different isometric line angles.
 </div>
 
@@ -42,9 +36,7 @@ There are exceptions to our perpendicular line rule, but they are mostly special
 An isometric plane can be divided up into a series of squares that have been joined together to form a larger square. The below image shows us how a normal 2D grid is turned into an isometric grid. The normal grid has simply been moved around, as if it were in a 3D space, so that the view has changed to an isometric view of the plane. Note that the lines do not converge, as in a normal perspective drawing. In isometric drawings, there is no "horizon," so there is no vanishing point, and consequently no "true" 3D perspective.
 
 <div class="image-caption aligncenter">
-
-![The isometric grid](../../images/isometric-pixel-art/isometric-grid.png)
-
+<img alt="The isometric grid" src="../../images/isometric-pixel-art/isometric-grid.png" />
 2.4: The top-down, standard grid becomes isometric. Note the 2:1 usage.
 </div>
 
@@ -57,27 +49,21 @@ We'll start with an outline. The simplest way to outline an isometric shape is t
 We'll start with a plain line the width of our upcoming cube. Keep to the 2:1 pixel ratio.
 
 <div class="image-caption aligncenter">
-
-![Cube: Step 1 - A line](../../images/isometric-pixel-art/drawing-cube-step-1.png)
-
+<img alt="Cube: Step 1 - A line" src="../../images/isometric-pixel-art/drawing-cube-step-1.png" />
 2.7: The first edge of the cube starts with a line.
 </div>
 
 Use this line to determine the lengths of the remaining lines. Draw the top line at the height you want your cube. Feel free to copy, then paste, the first line we drew for the top parallel line. Optionally, you can re-duplicate this line and flip it vertically to create the back edge shown above. Pixel art is tedious enough that you should strive to keep your repetitive tasks to a minimum.
 
 <div class="image-caption aligncenter">
-
-![Cube: Step 2 - A semi-cube](../../images/isometric-pixel-art/drawing-cube-step-2.png)
-
+<img alt="Cube: Step 2 - A semi-cube" src="../../images/isometric-pixel-art/drawing-cube-step-2.png" />
 2.8: One half of one cube gleamed.
 </div>
 
 Once you've got a full half of the cube drawn, merge any pasted layers together. Make sure you do not merge the cube into the background layer, or you're going to make more work for yourself shortly. Select the entire canvas with <span class="key-button">Ctrl</span>+<span class="key-button">A</span> (<span class="key-button"><span class="unicode">⌘</span></span>+<span class="key-button">V</span> on Mac) and immediately paste the layer. Go to Edit > Transform > Flip Horizontal. Position the other half so the middle line overlaps, as shown below:
 
 <div class="image-caption aligncenter">
-
-![Cube: Step 2 - A cube](../../images/isometric-pixel-art/drawing-cube-step-3.png)
-
+<img alt="Cube: Step 2 - A cube" src="../../images/isometric-pixel-art/drawing-cube-step-3.png" />
 2.9: A Cube.
 </div>
 

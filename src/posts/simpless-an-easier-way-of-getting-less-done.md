@@ -5,11 +5,11 @@ categories: open source software, programming
 tags: css, less, simpless, wordpress
 ---
 
-![LESS](../images/less-css.jpg)
+<img alt="LESS" class="aligncenter" src="../images/less-css.jpg" />
 
 When I first took a look at LESS as a CSS replacement, I wasn't too interested in having even a command-line compiler. The idea of having my stylesheet loaded and parsed by Javascript didn't sound that great either, but tolerable if it saved me enough time and effort writing CSS.
 
-![LESS](../images/simpless.png)
+<img alt="simpless" class="alignright" src="../images/simpless.png" />
 
 While testing LESS on my local server, I used `less.js` to process my `.less` stylesheet on the client side. It worked well, and on modern browsers the processing time is minimal, but I decided to look around for LESS compilers anyway. I discovered [http://wearekiss.com/simpless](SimpLESS) nearly immediately, and it looked perfect.
 
