@@ -1,6 +1,5 @@
 ---
 title: Data for Good
-draft: true
 ---
 
 With the recent revelations of huge companies collecting huge amounts of data used almost exclusively for the purpose of making them more money, I've been more and more fed up with seeing it concentrated through the lenses of an increasingly narrow profit-driven scope.
