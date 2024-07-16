@@ -28,7 +28,9 @@ Thanks, Thea!
     * ~~host-based-ad-blocking - PHP snippet~~
     * ~~generative-art-google-logo - image captions~~
     * the-importance-of-order - image resizing/linking (if necessary, maybe just restrict size unless explicitly linking higher res)
-* Snippets (<!--more--> tag)
+* Other handy tags
+    `<!--more-->`
+    `<!--TOC-->`
 * ~~Compile tags/cats~~
     * ~~group pages together~~
     * Generate pages for each
