@@ -4,7 +4,7 @@ Thanks, Thea!
 
 ## Requirements
 * Python 3
-* `pip install markdown python-frontmatter jinja2 pygments bs4 lxml`
+* `pip install -r requirements.txt`
 
 ## Build
 * `python build.py`
@@ -17,10 +17,6 @@ Thanks, Thea!
 * RSS
 * Keys plugin
     * Update to exclude code blocks like RewriteRules
-* Paths for things like:
-    * Tutorials
-    * About
-    * Work - maybe make this a single page
 * Image resizing
     * To theme?
     * To spec?
