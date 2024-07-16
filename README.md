@@ -34,4 +34,5 @@ Thanks, Thea!
 * ~~Compile tags/cats~~
     * ~~group pages together~~
     * Generate pages for each
+* All posts pagination
 * Comment system iframe
