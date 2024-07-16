@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block meta %}
+<meta property="og:title" content="{{title}}">
+
+{% if description %}
+<meta property="og:description" content="{{description}}">
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+<article>
+  <h1>{{title}}</h1>
+  <content>
+    {{content}}
+  </content>
+</article>
+{% endblock %}

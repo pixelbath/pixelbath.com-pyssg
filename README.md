@@ -4,7 +4,7 @@ Thanks, Thea!
 
 ## Requirements
 * Python 3
-* `pip install cmarkgfm python-frontmatter jinja2 pygments`
+* `pip install markdown python-frontmatter jinja2 pygments bs4 lxml`
 
 ## Build
 * `python build.py`

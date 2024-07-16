@@ -12,7 +12,7 @@ from pathlib import Path
 from pprint import pprint
 from bs4 import BeautifulSoup
 
-sources = pathlib.Path('.').glob('src/posts/*.md')
+post_sources = pathlib.Path('.').glob('src/posts/*.md')
 output_folder = './output'
 output_static = output_folder + '/static'
 output_images = output_folder + '/images'
@@ -44,17 +44,45 @@ def render_markdown(content: str) -> str:
     content = highlighting.highlight(content)
     return content
 
-for source in sources:
-    print(f"Processing {source}")
+import pathlib
+
+def render_page_folder(pages_path, output_folder):
+    def process_file(source, relative_path):
+        print(f"Processing page {source}")
+        content = render_markdown(source.read_text())
+        output_path = pathlib.Path(output_folder) / relative_path / f"{source.stem}/index.html"
+        
+        # ensure output directory exists
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        template = jinja_env.get_template('page.html')
+        rendered = template.render(title='Title', description='', content=content)
+        with output_path.open('w') as f:
+            f.write(rendered)
+
+    def traverse_folder(folder, relative_path=""):
+        for item in folder.iterdir():
+            if item.is_file() and item.suffix == '.md':
+                process_file(item, relative_path)
+            elif item.is_dir():
+                traverse_folder(item, os.path.join(relative_path, item.name))
+
+    base_folder = pathlib.Path(pages_path)
+    traverse_folder(base_folder)
+
+render_page_folder('src/pages/', './output/')
+
+for source in post_sources:
+    print(f"Processing post {source}")
     post = frontmatter.load(str(source))
 
     # set up post path
     # Path("{}/{}/".format(output_folder, source.stem)).mkdir(parents=True, exist_ok=True)
     content = render_markdown(post.content)
 
-    # addtl pre-parsing of html
+    # set up paths and render content to template
     post['stem'] = source.stem
-    path = pathlib.Path("{}/{}/index.html".format(output_folder, post['stem']))
+    output_path = pathlib.Path(output_folder) / post['date'].strftime('%Y/%m') / post['stem'] / 'index.html'
     template = jinja_env.get_template('post.html')
     rendered = template.render(post=post, content=content)
 
@@ -69,7 +97,9 @@ for source in sources:
         rendered = rendered.replace(caption.text.strip(), f"<p class=\"caption-text\">{caption.text.strip()}</p>")
         # print(caption.text.strip())
     
-    path.write_text(rendered, encoding="utf-8")
+    # ensure output directory exists
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(rendered, encoding="utf-8")
 
     # write syntax highlighting stylesheet
     css = highlighting.get_style_css('native')

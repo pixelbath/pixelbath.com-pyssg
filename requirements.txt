@@ -1,0 +1,6 @@
+markdown
+jinja2
+python-frontmatter
+pygments
+lxml
+bs4
