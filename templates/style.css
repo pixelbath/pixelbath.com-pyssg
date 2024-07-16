@@ -22,10 +22,14 @@ h2 {
 .image-caption {
     background-color: #d5d5d5;
     text-align: center;
-    width: 340px;
+    display: inline-block;
+}
+.image-caption.aligncenter {
+    transform: translateX(-50%);
+    margin-left: 50%;
 }
 .image-caption img {
-    margin-top: 3px;
+    margin: 4px;
 }
 .image-caption p {
     margin: 0.5em;
