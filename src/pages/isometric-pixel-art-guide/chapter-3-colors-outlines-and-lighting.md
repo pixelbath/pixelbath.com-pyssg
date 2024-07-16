@@ -25,3 +25,9 @@ Choosing the type of outline is the point you decide on the style you are shooti
 <img alt="Outline examples" src="../../images/isometric-pixel-art/outline-styles.png" />
 3.2: Three examples of object outlining.
 </div>
+
+[Read Chapter 2](../chapter-2-basic-pixel-art/)
+
+[Isometric Pixel Art Guide Home][../]
+
+

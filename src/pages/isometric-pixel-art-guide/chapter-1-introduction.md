@@ -50,4 +50,6 @@ Without depth cues, we end up with ambiguous figures.
 
 Once you've got your idea, it's sometimes still good to research it before sketching it out. This can be a good way to get examples of hidden details in a scene, building elements, or be introduced to new concepts. For example, if you are creating a building with deco elements, you might want to look for references like the Chrysler building, and other significant deco structures. Some buildings have a fire escape system, and others have distinctive patterns.
 
-[Read Chapter 2](chapter-2-basic-pixel-art.md)
+[Read Chapter 2](../chapter-2-basic-pixel-art/)
+
+[Isometric Pixel Art Guide Home][../]

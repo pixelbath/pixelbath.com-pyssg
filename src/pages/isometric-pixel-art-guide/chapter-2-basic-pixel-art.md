@@ -132,9 +132,11 @@ As a quick example of combining shapes, this example creates a cube which has sl
 
 -->
 
-[Read Chapter 3][2]{.button-std}
+[Read Chapter 1][../chapter-1-introduction/]
 
-[Isometric Pixel Art Guide Home][3]{.button-std}
+[Read Chapter 3][../chapter-3-colors-outlines-and-lighting/]
+
+[Isometric Pixel Art Guide Home][../]
 
 
 
