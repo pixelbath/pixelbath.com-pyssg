@@ -25,6 +25,7 @@ markdown_ = markdown.Markdown(
         "tables",
         "abbr",
         "fenced_code",
+        "extra",
     ]
 )
 
@@ -54,6 +55,23 @@ def render_markdown(content: str) -> str:
     markdown_.reset()
     content = markdown_.convert(content)
     content = highlighting.highlight(content)
+    content = render_keybuttons(content)
+    content = render_emoji(content)
+
+    # TODO: make this configurable
+    content = content.replace('../../images', f"{webroot}/images")
+    content = content.replace('../images', f"{webroot}/images")
+    content = content.replace('../static', f"{webroot}/static")
+
+    # update image captions
+    soup = BeautifulSoup(content, features='lxml')
+    captions = soup.find_all('div', {'class': 'image-caption'})
+    for caption in captions:
+        caption_text = ''
+        for caption_seg in caption.contents[1:]:
+            caption_text += str(caption_seg)
+        content = content.replace(caption_text, f"<p class=\"caption-text\">{caption_text.strip()}</p>")
+    
     return content
 
 def key_upper_repl(match):
@@ -85,32 +103,12 @@ def render_emoji(content: str) -> str:
         content = content.replace(k, v)
     return content
 
-def markdown_to_html(content: str) -> str:
-    content = render_markdown(content)
-    content = render_keybuttons(content)
-    content = render_emoji(content)
-
-    # TODO: make this configurable
-    content = content.replace('../images', f"{webroot}/images")
-    content = content.replace('../static', f"{webroot}/static")
-
-    # update image captions
-    soup = BeautifulSoup(content, features='lxml')
-    captions = soup.find_all('div', {'class': 'image-caption'})
-    for caption in captions:
-        caption_text = ''
-        for caption_seg in caption.contents[1:]:
-            caption_text += str(caption_seg)
-        content = content.replace(caption_text, f"<p class=\"caption-text\">{caption_text.strip()}</p>")
-    
-    return content
-    
 import pathlib
 
 def render_page_folder(pages_path, output_folder):
     def process_file(source, relative_path):
         print(f"Processing page {source}")
-        content = markdown_to_html(source.read_text())
+        content = render_markdown(source.read_text())
         output_path = pathlib.Path(output_folder) / relative_path / f"{source.stem}/index.html"
         if source.stem.endswith('index'):
             output_path = pathlib.Path(output_folder) / relative_path / f"index.html"
@@ -152,7 +150,7 @@ for source in post_sources:
 
     # set up post path
     # Path("{}/{}/".format(output_folder, source.stem)).mkdir(parents=True, exist_ok=True)
-    content = markdown_to_html(post.content)
+    content = render_markdown(post.content)
 
     # set up paths and render content to template
     post['stem'] = source.stem

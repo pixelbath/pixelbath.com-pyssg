@@ -1,10 +1,10 @@
 # Personal
 
-### For Work, But Fun Too
+## For Work, But Fun Too
 
 Technically these were for my day job, but they weren't required and I had fun making them.
 
-<div class="gallery">
+<div class="gallery" markdown="1">
 
 - ![CradleMRx wanted a fun Thanksgiving-themed loading animation for their SaaS platform. I created this paranoid turkey as an animated .gif that displayed as an application splash screen](../../images/thanksgiving-turkey.gif)
     - Tools: Adobe Illustrator, Adobe Photoshop
@@ -15,11 +15,11 @@ Technically these were for my day job, but they weren't required and I had fun m
 
 <div>
 
-### Fun with GIFs
+## Fun with GIFs
 
 Playing around with looping animated images of random effects.
 
-<div class="gallery">
+<div class="gallery" markdown="1">
 
 - ![Particle sphere](../../images/sphere-particles.gif)
     - Random experiments with After Effects plugins
