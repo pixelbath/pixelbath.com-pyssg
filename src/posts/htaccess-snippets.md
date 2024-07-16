@@ -24,7 +24,7 @@ RewriteEngine On
 RewriteBase /blog/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule (.+) /blog/index.php L
+RewriteRule (.+) /blog/index.php [L]
 ```
 
 What this does is start from the `/blog/` folder, and handle any requests under that. The first RewriteCond sets our rule to not apply to any physical files matching the request, and the second does the same for physical directories.
@@ -46,7 +46,7 @@ The preceding snippet will block specific websites and their subdomains from hot
 RewriteEngine On
 RewriteCond %{HTTP_REFERER} !^http://(.+\.)?yourdomain\.com/ [NC]
 RewriteCond %{HTTP_REFERER} !^$
-RewriteRule .*\.(jpe?g|gif|bmp|png)$ /images/horrifying-image.jpg L
+RewriteRule .*\.(jpe?g|gif|bmp|png)$ /images/horrifying-image.jpg [L]
 ```
 
 This one will take any request with a referer not originating from your domain, or blank referers (because some users do legitimately blank their referer string), and redirect them to an image elsewhere on your site. This will work “inline” and display whichever image you specify on outside sites.
@@ -54,7 +54,7 @@ This one will take any request with a referer not originating from your domain, 
 If you'd prefer to be plain and simple though, you can just set HTTP code 403 (Forbidden) on any image for any of the rewrites in this section. Simply replace the `RewriteRule` of each with:
 
 ```apacheconf
-RewriteRule .*\.(jpe?g|gif|bmp|png)$ - F
+RewriteRule .*\.(jpe?g|gif|bmp|png)$ - [F]
 ```
 
 Which simply sets any request for any image to 403 (Forbidden). Obviously, it should be used in conjunction with `RewriteCond`s.

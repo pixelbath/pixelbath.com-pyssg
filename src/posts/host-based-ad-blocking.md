@@ -10,7 +10,7 @@ To block ads on the web, we need to catch requests to a particular ad server and
 These steps will require that you have Apache HTTP server (or IIS with ISAPI_rewrite, something that can rewrite URLs) running on your local machine (or on a system with low latency, possibly on your network).
 
 <!-- more -->
-First, we will need to edit the hosts file, and add an entry in the form `127.0.0.1 ad.example.com`. If you are running Windows, examples should already be present in the hosts file. On Windows systems, this file can be found in `%WINDOWS%\\system32\\drivers\\etc\\hosts`, on Linux systems in `/etc/hosts`, and in OSX 10.2 and later in `/private/etc/hosts`.
+First, we will need to edit the hosts file, and add an entry in the form `127.0.0.1 ad.example.com`. If you are running Windows, examples should already be present in the hosts file. On Windows systems, this file can be found in `%WINDOWS%\system32\drivers\etc\hosts`, on Linux systems in `/etc/hosts`, and in OSX 10.2 and later in `/private/etc/hosts`.
 
 So how do we get the hostname of an ad server? We can do this several ways, but you have to work for it just a little bit (I know, AdBlock makes it so easy). Since I am a web developer, I usually have the Firebug extension running (now using Firefox's native developer tools), so I just click "Inspect" and the element is highlighted in the source code, usually with the URL of the server right there for me.
 
@@ -22,18 +22,45 @@ Once we've created the entry in the hosts file, we can test by closing all brows
 
 I created a page that shows the word "Blocked" and the hostname instead of the Apache 404 error page, but I don't want it displayed as my 404 URL for everything. I tried this, and it was problematic. I forget why.
 
-To get our page handling all these misdirected requests, we'll use some basic URL rewriting. You may need to adjust the example to suit your development environment, as this will take over all requests to your local server. This is the .htaccess file I have on my development machine's DocumentRoot:
+To get our page handling all these misdirected requests, we'll use some basic URL rewriting. You may need to adjust the example to suit your development environment, as this will take over all requests to your local server. This is the .htaccess file I have on my development machine's `DocumentRoot`:
 
 ```apacheconf
 RewriteEngine on
 
 RewriteCond %{HTTP_HOST} !^localhost* [NC]
-RewriteRule (.+) index.php L
+RewriteRule (.+) index.php [L]
 ```
 
 The `RewriteCond` takes any request that is not for localhost and sends it to the `RewriteRule`, which directs all requests to `index.php`:
 
-Blocked
+```php
+<?php
+// get information from the requested url
+$path = $_SERVER['REQUEST_URI'];
+$host = $_SERVER['SERVER_NAME'];
+
+// in case short_tags=On in php.ini
+echo '<' . '?xml version="1.0" encoding="UTF-8"?' . '-->';
+?>
+
+<style type="text/css">
+	body {
+		font-family: sans-serif;
+		background-color: #e1eaf3;
+		color: #9fb1c3;
+		margin: 10px;
+	}
+	h1 {
+		font-size: 12px;
+		margin: 0;
+	}
+	p {
+		font-size: 10px;
+	}
+	</style>
+<h1>Blocked</h1>
+<?php echo $host; ?>
+```
 
 I styled my block page in a nice light blue, so it shows up unobtrusively in ad-blocked pages. At the same time, you can easily see which items have been blocked. Since it replaces content that would otherwise be served from elsewhere, it doesn't break page layout.
 

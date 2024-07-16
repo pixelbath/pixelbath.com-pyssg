@@ -11,18 +11,23 @@ Thanks, Thea!
 * Site will be in the `/output` folder
 
 ## TODO
-* Base path to re-path all images to a common root
-    * will also need to parse relative/absolute image links in MD
-* Emoji plugin
+* ~~Base path to re-path all images to a common root~~
+    * ~~will also need to parse relative/absolute image links in MD~~
+* ~~Emoji plugin~~
 * RSS
-* Keys plugin
-    * Update to exclude code blocks like RewriteRules
+* ~~Keys plugin~~
+    * ~~Update to exclude code blocks like RewriteRules~~
+    * Update source files to use new syntax
 * Image resizing
     * To theme?
     * To spec?
 * Link classes - buttons, specifically
 * Fix/implement functionality or content for:
-    * clear-photoshops-swatch-palette - styled button icon
-    * host-based-ad-blocking - PHP snippet
-    * generative-art-google-logo - image captions
+    * clear-photoshops-swatch-palette
+        * filetype icons
+    * ~~host-based-ad-blocking - PHP snippet~~
+    * ~~generative-art-google-logo - image captions~~
     * the-importance-of-order - image resizing/linking (if necessary, maybe just restrict size unless explicitly linking higher res)
+* Snippets (more tag)
+* Compile tags, build pages
+* Compile categories, build pages

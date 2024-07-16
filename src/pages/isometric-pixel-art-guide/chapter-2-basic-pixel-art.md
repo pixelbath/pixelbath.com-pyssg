@@ -60,7 +60,7 @@ Use this line to determine the lengths of the remaining lines. Draw the top line
 2.8: One half of one cube gleamed.
 </div>
 
-Once you've got a full half of the cube drawn, merge any pasted layers together. Make sure you do not merge the cube into the background layer, or you're going to make more work for yourself shortly. Select the entire canvas with <span class="key-button">Ctrl</span>+<span class="key-button">A</span> (<span class="key-button"><span class="unicode">⌘</span></span>+<span class="key-button">V</span> on Mac) and immediately paste the layer. Go to Edit > Transform > Flip Horizontal. Position the other half so the middle line overlaps, as shown below:
+Once you've got a full half of the cube drawn, merge any pasted layers together. Make sure you do not merge the cube into the background layer, or you're going to make more work for yourself shortly. Select the entire canvas with [ Ctrl ]+[ A ] ([ cmd ]+[ V ] on Mac) and immediately paste the layer. Go to Edit > Transform > Flip Horizontal. Position the other half so the middle line overlaps, as shown below:
 
 <div class="image-caption aligncenter">
 <img alt="Cube: Step 2 - A cube" src="../../images/isometric-pixel-art/drawing-cube-step-3.png" />
