@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Pixelbath</title>
+  <link href="https://www.pixelbath.com/"/>
+  <updated>{{ last_updated }}</updated>
+  <author>
+    <name>Michael Hoskins</name>
+  </author>
+  <id>https://www.pixelbath.com/</id>
+{% for post in posts %}
+  <entry>
+    <title>{{ post_title }}</title>
+    <link href="{{ post_link }}"/>
+    <id>{{ post_link }}</id>
+    <updated>{{ post_date }}</updated>
+    <summary>{{ post_summary }}</summary>
+  </entry>
+{% endfor %}
+</feed>

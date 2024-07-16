@@ -34,6 +34,8 @@ jinja_env = jinja2.Environment(
 
 categories = []
 tags = []
+posts_by_date = {}
+posts_by_tag = {}
 
 # delete and re-create output folders
 try:
@@ -116,9 +118,15 @@ for source in post_sources:
     print(f"Processing post {source}")
     post = frontmatter.load(str(source))
 
+    posts_by_date[post['date']] = source.stem
     post_cats = [x.strip() for x in post['categories'].split(',')]
     categories = set().union(categories, post_cats)
     post_tags = [x.strip() for x in post['tags'].split(',')]
+    for tag in post_tags:
+        if tag not in posts_by_tag:
+            posts_by_tag[tag] = []
+        posts_by_tag[tag].append(source.stem)
+
     tags = set().union(tags, post_tags)
 
     # set up post path
@@ -147,15 +155,23 @@ for source in post_sources:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(rendered, encoding="utf-8")
 
-    # write syntax highlighting stylesheet
-    css = highlighting.get_style_css('native')
-    pathlib.Path("{}/static/pygments.css".format(output_folder)).write_text(css)
+# write syntax highlighting stylesheet
+css = highlighting.get_style_css('native')
+pathlib.Path("{}/static/pygments.css".format(output_folder)).write_text(css)
 
-    # copy over static stylesheet
-    copy('./templates/style.css', "{}/static/".format(output_folder))
+# copy over static stylesheet
+copy('./templates/style.css', "{}/static/".format(output_folder))
 
-    # copy static folders that need to be in the output
-    copytree('./src/images', "{}/images".format(output_folder), dirs_exist_ok=True)
+# copy static folders that need to be in the output
+copytree('./src/images', "{}/images".format(output_folder), dirs_exist_ok=True)
 
+# Generate RSS
+# posts_by_date = sorted(posts_by_date.items(), reverse=True)[:10]
+# template = jinja_env.get_template('rss.xml')
+# rendered = template.render(post=post, content=content)
+
+# debug stuff
+print (f"Posts by date: {posts_by_date}")
+print (f"Posts by tag: {posts_by_tag}")
 print (f"All categories: {categories}")
 print (f"All tags: {tags}")
