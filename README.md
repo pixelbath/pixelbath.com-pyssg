@@ -29,8 +29,8 @@ Thanks, Thea!
     * ~~generative-art-google-logo - image captions~~
     * the-importance-of-order - image resizing/linking (if necessary, maybe just restrict size unless explicitly linking higher res)
 * Other handy tags
-    `<!--more-->`
-    `<!--TOC-->`
+    * `<!--more-->`
+    * ~~`<!--TOC-->`~~ - now [TOC]
 * ~~Compile tags/cats~~
     * ~~group pages together~~
     * Generate pages for each

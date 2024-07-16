@@ -52,6 +52,9 @@ except OSError as e:
     exit()
 
 def render_markdown(content: str) -> str:
+    if content.startswith('#draft'):
+        return None
+
     markdown_.reset()
     content = markdown_.convert(content)
     content = highlighting.highlight(content)
@@ -109,6 +112,8 @@ def render_page_folder(pages_path, output_folder):
     def process_file(source, relative_path):
         print(f"Processing page {source}")
         content = render_markdown(source.read_text())
+        if content is None:
+            return
         output_path = pathlib.Path(output_folder) / relative_path / f"{source.stem}/index.html"
         if source.stem.endswith('index'):
             output_path = pathlib.Path(output_folder) / relative_path / f"index.html"
@@ -148,8 +153,6 @@ for source in post_sources:
 
     tags = set().union(tags, post_tags)
 
-    # set up post path
-    # Path("{}/{}/".format(output_folder, source.stem)).mkdir(parents=True, exist_ok=True)
     content = render_markdown(post.content)
 
     # set up paths and render content to template

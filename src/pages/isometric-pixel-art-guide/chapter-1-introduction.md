@@ -1,6 +1,6 @@
 # Chapter 1: Introduction
 
-<!-- TOC -->
+[TOC]
 
 ### Isometric Pixel Art
 
@@ -13,7 +13,6 @@ While you may or may not care about the mathematical uses of isometric projectio
 
 This introduction contains both a technical definition of isometric art, but more importantly, how that concept fits into some simple rules that can result in some visually stunning works.
 
-[TOC]
 
 ### Isometry
 

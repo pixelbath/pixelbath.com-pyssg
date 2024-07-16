@@ -1,6 +1,6 @@
 # Chapter 2: Basic Pixel Art
 
-<!-- TOC -->
+[TOC]
 
 ### The Basic Isometric Line
 
