@@ -32,9 +32,12 @@ jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader('templates'),
 )
 
+categories = []
+tags = []
+
 # delete and re-create output folders
 try:
-    pathlib.Path(output_folder).unlink(missing_ok=True)
+    # pathlib.Path(output_folder).unlink(missing_ok=True)
     if not os.path.exists(output_folder):
         os.makedirs(output_folder, mode=0o777)
     if not os.path.exists(output_static):
@@ -113,6 +116,11 @@ for source in post_sources:
     print(f"Processing post {source}")
     post = frontmatter.load(str(source))
 
+    post_cats = [x.strip() for x in post['categories'].split(',')]
+    categories = set().union(categories, post_cats)
+    post_tags = [x.strip() for x in post['tags'].split(',')]
+    tags = set().union(tags, post_tags)
+
     # set up post path
     # Path("{}/{}/".format(output_folder, source.stem)).mkdir(parents=True, exist_ok=True)
     content = render_markdown(post.content)
@@ -148,3 +156,6 @@ for source in post_sources:
 
     # copy static folders that need to be in the output
     copytree('./src/images', "{}/images".format(output_folder), dirs_exist_ok=True)
+
+print (f"All categories: {categories}")
+print (f"All tags: {tags}")
