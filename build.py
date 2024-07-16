@@ -56,13 +56,16 @@ def render_markdown(content: str) -> str:
     content = highlighting.highlight(content)
     return content
 
+def key_upper_repl(match):
+    return '<span class="key-button">' + match.group(1).upper() + '</span>'
+
 def render_keybuttons(content: str) -> str:
     content = re.sub(r'\[ cmd \]', '<span class="key-button"><span class="unicode">⌘</span>', content, flags=re.IGNORECASE)
     content = re.sub(r'\[ ctrl \]', '<span class="key-button">Ctrl</span>', content, flags=re.IGNORECASE)
     content = re.sub(r'\[ alt \]', '<span class="key-button">Alt</span>', content, flags=re.IGNORECASE)
     content = re.sub(r'\[ shift \]', '<span class="key-button"><span class="unicode">⇧</span> Shift</span>', content, flags=re.IGNORECASE)
     content = re.sub(r'\[ option \]', '<span class="key-button"><span class="unicode">⌥</span> Option</span>', content, flags=re.IGNORECASE)
-    content = re.sub(r'\[ (.) \]', r'<span class="key-button">\1</span>', content, flags=re.IGNORECASE)
+    content = re.sub(r'\[ (.) \]', key_upper_repl, content, flags=re.IGNORECASE)
     return content
 
 def render_emoji(content: str) -> str:

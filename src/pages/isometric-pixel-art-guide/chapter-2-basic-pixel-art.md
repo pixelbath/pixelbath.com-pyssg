@@ -74,7 +74,7 @@ Once the outline is complete, it's time to color the cube. Here I'll be choosing
 
 Using the color we used on the cube, choose other colors based on your source color. For example, I used a somewhat light blue, so I have room to use two darker shades of blue. If you chose a dark color to begin with, you will want to use lighter shades as highlights.
 
-Fill different faces of the cube using the paint bucket tool (<span class="key-button">G</span>), according to the desired light source. I'm going to choose having the light coming from the top-left, which is somewhat standard for isometric pixel art. The top if the cube is filled with the lightest shade, as it receives the most light. The left side uses the middle shade, as it's closer to the light source. The right side is the darkest, since the shadows on this side of the cube are strongest.
+Fill different faces of the cube using the paint bucket tool ([ G ]), according to the desired light source. I'm going to choose having the light coming from the top-left, which is somewhat standard for isometric pixel art. The top if the cube is filled with the lightest shade, as it receives the most light. The left side uses the middle shade, as it's closer to the light source. The right side is the darkest, since the shadows on this side of the cube are strongest.
 
 [caption id="attachment_ab" align="alignright" width="315" caption="2.10: One half of one cube gleamed."]<img decoding="async" src="/images/isometric-pixel-art/basic-lighting-topleft.png" alt="Cube: Step 1 - A line" />[/caption]
 

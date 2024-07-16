@@ -18,11 +18,11 @@ Even with this setup, I've been rendering drafts to an mp4 file and running a vi
 
 &#8216;Lo, and behold! There _is_ a way.
 
-According to Adobe documentation, <span class="key-button">Ctrl</span>+<span class="key-button">\</span> (<span class="key-button"><span class="unicode">⌘</span></span>+<span class="key-button">\</span> on Mac) does the following:
+According to Adobe documentation, [ Ctrl ]+[ \ ] ([ Cmd ]+[ \ ] on Mac) does the following:
 
 > Resize application window or floating window to fit screen. (Press again to resize window so that contents fill the screen.)
 
-Since my composition window is on the second monitor already, I pressed <span class="key-button">Ctrl</span>+<span class="key-button">\</span> twice.
+Since my composition window is on the second monitor already, I pressed [ Ctrl ]+[ \ ] twice.
 
 <div class="image-caption aligncenter">
 <img alt="screenshot of window not filling the monitor" src="../images/fullscreen-afx-preview.png" />
