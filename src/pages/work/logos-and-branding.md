@@ -1,4 +1,4 @@
-# Logos and Branding
+## Logos and Branding
 
 I provide unique, handcrafted logos to match the desires of my clients.
 

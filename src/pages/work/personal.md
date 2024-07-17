@@ -1,6 +1,6 @@
-# Personal
+## Personal
 
-## For Work, But Fun Too
+### For Work, But Fun Too
 
 Technically these were for my day job, but they weren't required and I had fun making them.
 
@@ -15,7 +15,7 @@ Technically these were for my day job, but they weren't required and I had fun m
 
 <div>
 
-## Fun with GIFs
+### Fun with GIFs
 
 Playing around with looping animated images of random effects.
 

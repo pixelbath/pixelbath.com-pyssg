@@ -1,13 +1,13 @@
-# About
+## About
 
 This is the personal website of Michael Hoskins, a designer and programmer located in Northwest Montana.
 
-## Work
+### Work
 In past years, I've managed PC vendor support and sales for a small business, been employed as a programmer and designer, and consulted for corporations in the oil & gas and cable media industries. For about the last decade, I've held administrative/managerial positions related to graphics and development.
 
 I'm available for freelance requests on an ongoing basis, provided I am not too busy with current assignments. Projects that push boundaries and expand my knowledge are of particular interest. Send me an email at <span class="email"></span> by accessing my [contact](/contact/) page. My current focus is on the following: Blender, 3ds max, After Effects animation, Illustrator, Photoshop, Android/iOS apps, PHP, Javascript, jQuery, and WordPress themes and plugins. Be sure to check out my [work](/work/) page for samples.
 
-## Play
+### Play
 I've been a lover of video games for almost as long as I can remember, and an avid programmer for nearly as long. In elementary school, one of our classes had a [TI-99/4A](http://en.wikipedia.org/wiki/Texas_Instruments_TI-99/4A) with a few games on it. From that moment on, I was captivated by the capabilities of computers and the potential they contained for entertainment.
 
 <div class="image-caption alignleft"><img alt="Commodore 64" src="../images/Commodore-64-Computer.png" />

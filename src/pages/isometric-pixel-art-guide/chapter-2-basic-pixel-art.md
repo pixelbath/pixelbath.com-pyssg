@@ -1,4 +1,4 @@
-# Chapter 2: Basic Pixel Art
+## Chapter 2: Basic Pixel Art
 
 [TOC]
 

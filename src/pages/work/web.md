@@ -1,4 +1,4 @@
-# Web
+## Web
 
 Below you can view some of the website-related work I've done. I have extensive knowledge of WordPress architecture through developing themes from scratch along with supporting plugin functionality.
 

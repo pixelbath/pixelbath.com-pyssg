@@ -1,4 +1,4 @@
-# Work
+## Work
 
 * [Print](print/) - I've done brochures, business cards, training course catalogs, fliers, trade show booth design, and much more.
 * [Logos and Branding](logos-and-branding/) - Sometimes the client simply wants a logo, and other times they'll need a full package of materials.

@@ -1,5 +1,5 @@
 #draft
-# Texturing
+## Texturing
 
 Texture helps define the surface of an object in the real world, and pixel art is no different. It can make the difference between a plain green field and a rough, untended patch of grass.
 

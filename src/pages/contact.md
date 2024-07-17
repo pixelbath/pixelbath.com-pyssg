@@ -1,4 +1,4 @@
-# Contact
+## Contact
 
 If you'd like to contact me about a project, or have a question about the content you see on this site, or just want to chat me up, I'm mostly available as time demands.
 

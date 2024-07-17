@@ -1,14 +1,24 @@
 body {
     font-family: Calibri,Gill Sans,Arial,sans-serif;
     font-size: 12pt;
+    background-color: #fff;
+}
+a {
+    color: #005afe;
+}
+a:hover {
+    color: #95cb14;
 }
 p {
     color: #333;
 }
-h2 {
-    color: #666;
+h1,h2 {
+    color: #333;
     font-size: 14pt;
     font-weight: normal;
+}
+h2 {
+    font-size: 18pt;
 }
 .aligncenter {
     display: block;
@@ -23,6 +33,7 @@ h2 {
     background-color: #d5d5d5;
     text-align: center;
     display: inline-block;
+    border-radius: 6px;
 }
 .image-caption.aligncenter {
     transform: translateX(-50%);
@@ -36,6 +47,10 @@ h2 {
     color: #333;
 }
 
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
 
 .gallery > ul {
     list-style: none;
@@ -64,6 +79,8 @@ h2 {
 
 header {
     height:90px;
+    width: 960px;
+    margin: 0 auto;
 }
 header a {
     text-align: center;
@@ -76,6 +93,7 @@ header a {
 header a.logo {
     float: left;
     width: 130px;
+    margin-left: -65px;
 }
 nav.header {
     float: right;
@@ -90,4 +108,26 @@ nav.header {
     .header-right {
       float: none;
     }
-  }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #112;
+        color: #c9cdd0;
+    }
+    p {
+        color: #c9cdd0;
+    }
+    h1,h2 {
+        color: #adb4ba;
+    }
+    .image-caption {
+        background-color: #333;
+    }
+    .image-caption p {
+        color: #ccc;
+    }
+}
+  
+@media (prefers-color-scheme: light) {
+}

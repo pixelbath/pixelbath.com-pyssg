@@ -1,4 +1,4 @@
-# Chapter 3: Colors, Outlines, and Lighting
+## Chapter 3: Colors, Outlines, and Lighting
 
 Using and selecting the correct colors to use for your isometric pixel art is one of the most important aspects of the overall work. Shading your work can mean more than simply darkening or lightening your main color. The hues and colors chosen determine the look and feel if your scene. Imagine your building or scene as it would look right in front of you. Whether it's bright plastic style, mid-tone natural colours, or even monochrome, it's entirely up to you.
 
