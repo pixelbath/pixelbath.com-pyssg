@@ -13,7 +13,6 @@ from pprint import pprint
 from bs4 import BeautifulSoup
 import re
 
-post_sources = pathlib.Path('.').glob('src/posts/*.md')
 output_folder = './output'
 output_static = output_folder + '/static'
 output_images = output_folder + '/images'
@@ -78,6 +77,7 @@ def render_markdown(content: str) -> str:
             caption_text += str(caption_seg)
         content = content.replace(caption_text, f"<p class=\"caption-text\">{caption_text.strip()}</p>")
     
+    # TODO: update gallery layouts
     return content
 
 def key_upper_repl(match):
@@ -111,7 +111,8 @@ def render_emoji(content: str) -> str:
 
 import pathlib
 
-def render_page_folder(pages_path, output_folder):
+# build all non-blog pages using the folder layout in pages_path
+def process_page_folder(pages_path: str, output_folder: str) -> None:
     def process_file(source, relative_path):
         # print(f"Processing page {source}")
         content = render_markdown(source.read_text())
@@ -140,36 +141,41 @@ def render_page_folder(pages_path, output_folder):
     base_folder = pathlib.Path(pages_path)
     traverse_folder(base_folder)
 
+# build all blog posts using frontmatter to structure backward-compatible permalinks
+# also updates cumulative variables posts_by_date, posts_by_tag, posts_by_cat, post_tags, and post_cats for later use.
+def process_post_folder(posts_path: str, output_folder: str) -> None:
+    post_sources = pathlib.Path(posts_path).glob('*.md')
+
+    for source in post_sources:
+        post = frontmatter.load(str(source))
+        posts_by_date[post['date']] = post
+
+        post_tags = [x.strip() for x in post['tags'].split(',')]
+        # tags = set().union(tags, post_tags)
+
+        post_cats = [x.strip() for x in post['categories'].split(',')]
+        # categories = set().union(categories, post_cats)
+
+        content = render_markdown(post.content)
+        # set up paths and render content to template
+        post['stem'] = source.stem
+        output_path = pathlib.Path(output_folder) / post['date'].strftime('%Y/%m') / post['stem'] / 'index.html'
+        template = jinja_env.get_template('post.html')
+        rendered = template.render(post=post, content=content)
+
+        # ensure output directory exists
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(rendered, encoding="utf-8")
+
+
 # def render_post_summary(post: frontmatter.Post) -> str:
 #     return None
 
-render_page_folder('src/pages/', output_folder)
+# Create website Pages.
+process_page_folder('src/pages/', output_folder)
 
-def process_post(post: frontmatter.Post) -> str:
-    posts_by_date[post['date']] = post
-
-    post_tags = [x.strip() for x in post['tags'].split(',')]
-    # tags = set().union(tags, post_tags)
-
-    post_cats = [x.strip() for x in post['categories'].split(',')]
-    # categories = set().union(categories, post_cats)
-
-    content = render_markdown(post.content)
-    # set up paths and render content to template
-    post['stem'] = source.stem
-    output_path = pathlib.Path(output_folder) / post['date'].strftime('%Y/%m') / post['stem'] / 'index.html'
-    template = jinja_env.get_template('post.html')
-    rendered = template.render(post=post, content=content)
-
-    # ensure output directory exists
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(rendered, encoding="utf-8")
-
-# run through posts and build dicts
-for source in post_sources:
-    # print(f"Processing post {source}")
-    post = frontmatter.load(str(source))
-    process_post(post)
+# Create website Posts.
+process_post_folder('src/posts/', output_folder)
 
 # start pagination and re-sort everything by reverse chrono
 page_counter = 1
