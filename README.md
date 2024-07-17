@@ -22,9 +22,11 @@ Thanks, Thea!
     * To theme?
     * To spec?
 * Link classes - buttons, specifically
+* Doodads
+    * File type icons (clear-photoshops-swatch-palette)
+    * External link indicators
+    * Syntax highlighting extras (line numbers, copy, etc)
 * Fix/implement functionality or content for:
-    * clear-photoshops-swatch-palette
-        * filetype icons
     * ~~host-based-ad-blocking - PHP snippet~~
     * ~~generative-art-google-logo - image captions~~
     * the-importance-of-order - image resizing/linking (if necessary, maybe just restrict size unless explicitly linking higher res)
@@ -41,3 +43,6 @@ Thanks, Thea!
 * ~~Dark mode, light mode~~
     * selector
 * Responsive design
+* Process gallery sections using bs4
+* Replicate existing site "close enough"
+* Responsiveness
