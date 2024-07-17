@@ -34,5 +34,9 @@ Thanks, Thea!
 * ~~Compile tags/cats~~
     * ~~group pages together~~
     * Generate pages for each
-* All posts pagination
+* All posts pagination - reverse chrono
+    * `/page/1/` redirect to `/`
 * Comment system iframe
+* LESS?
+* Dark mode, light mode
+* Responsive design
