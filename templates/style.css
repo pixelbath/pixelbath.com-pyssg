@@ -26,6 +26,43 @@ h3 {
     font-weight: normal;
     font-size: 16pt;
 }
+a.logo svg {
+    fill: #005afe;
+}
+a.logo:hover svg {
+    fill: #95cb14;
+}
+
+header {
+    height:90px;
+    width: 960px;
+    margin: 0 auto;
+}
+header a {
+    font-family: Helvetica, Helvetica Nueue, Arial, sans-serif;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 17pt; 
+    line-height: 25px;
+    border-radius: 4px;
+}
+header a.logo {
+    float: left;
+    width: 130px;
+    margin-left: -65px;
+}
+nav.header {
+    float: right;
+    margin: 1em 0 0 auto;
+}
+
+/* layout */
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
 .alignleft {
     float: left;
     clear: left;
@@ -95,28 +132,6 @@ img.alignleft {
 }
 
 
-header {
-    height:90px;
-    width: 960px;
-    margin: 0 auto;
-}
-header a {
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px; 
-    line-height: 25px;
-    border-radius: 4px;
-}
-header a.logo {
-    float: left;
-    width: 130px;
-    margin-left: -65px;
-}
-nav.header {
-    float: right;
-    margin: 1em 0 0 auto;
-}
 @media screen and (max-width: 500px) {
     header a {
       float: none;
