@@ -1,0 +1,11 @@
+## Blender Quick Tip: Selecting Things
+
+There are several ways to select objects in Blender. All three methods listed below work in both Edit and Object modes, and can be used with vertices, edges, faces, objects, or pretty much any other selectable object.
+
+In addition, for box and circle selection modes, using the left mouse button adds to the existing selection, and using the middle button will subtract from it. To clear the entire selection, press [A] to select all, then [A] again to select none. Since the middle mouse button is used in this fashion, changing the view with the middle button in these modes does not work until the selection mode is cancelled.
+
+<img src="https://www.pixelbath.com/wp-content/uploads/blender-circle-selection.gif" alt="Blender circle selection mode" width="375" height="150" class="alignright size-full wp-image-1282" /><strong>Circle Select</strong> - Press [C] to enable circle selection mode, and right-click to disable. Circle selection mode allows you to essentially "paint" a selection, which is handy for selecting large groups of faces or vertices at a time. Use the scroll wheel to change the selection circle size.
+
+<img src="https://www.pixelbath.com/wp-content/uploads/blender-box-selection.gif" alt="Blender box selection mode" width="375" height="150" class="alignright size-full wp-image-1282" /><strong>Box Select</strong> - Press [B] to enable box selection mode, and right-click or [Esc] to cancel. Box selection works like nearly any box selection mode in most software, and is useful for selecting objects in a linear fashion.
+
+<img src="https://www.pixelbath.com/wp-content/uploads/blender-lasso-selection.gif" alt="Blender lasso selection mode" width="375" height="150" class="alignright size-full wp-image-1282" /><strong>Lasso Select</strong> - Hold [Ctrl] and drag with the left mouse button to create a lasso selection. To create a deselection lasso, hold [Ctrl]+[Shift] and use the left mouse button. When your cursor is steadier than my example, this is a useful method of selecting specific groups of objects while avoiding others.
