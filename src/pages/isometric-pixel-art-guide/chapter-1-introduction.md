@@ -52,4 +52,4 @@ Once you've got your idea, it's sometimes still good to research it before sketc
 
 [Read Chapter 2](../chapter-2-basic-pixel-art/)
 
-[Isometric Pixel Art Guide Home][../]
+[Isometric Pixel Art Guide Home](../)

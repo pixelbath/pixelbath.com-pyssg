@@ -28,6 +28,6 @@ Choosing the type of outline is the point you decide on the style you are shooti
 
 [Read Chapter 2](../chapter-2-basic-pixel-art/)
 
-[Isometric Pixel Art Guide Home][../]
+[Isometric Pixel Art Guide Home](../)
 
 

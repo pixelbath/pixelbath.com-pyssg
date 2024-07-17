@@ -17,15 +17,15 @@ Thanks, Thea!
 * RSS
 * ~~Keys plugin~~
     * ~~Update to exclude code blocks like RewriteRules~~
-    * Update source files to use new syntax
+    * ~~Update source files to use new syntax~~
 * Image resizing
     * To theme?
     * To spec?
-* Link classes - buttons, specifically
 * Doodads
     * File type icons (clear-photoshops-swatch-palette)
     * External link indicators
     * Syntax highlighting extras (line numbers, copy, etc)
+    * Link buttons
 * Fix/implement functionality or content for:
     * ~~host-based-ad-blocking - PHP snippet~~
     * ~~generative-art-google-logo - image captions~~
@@ -43,6 +43,6 @@ Thanks, Thea!
 * ~~Dark mode, light mode~~
     * selector
 * Responsive design
-* Process gallery sections using bs4
+* Process gallery sections using bs4 - keep JS minimal
 * Replicate existing site "close enough"
 * Responsiveness

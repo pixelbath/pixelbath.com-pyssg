@@ -44,7 +44,7 @@ An isometric plane can be divided up into a series of squares that have been joi
 
 The first thing to do is create a new layer for the artwork. Working on the background layer limits our ability to move elements around easily and quickly. You can click the New Layer button (<span class="icon icon-ps-new-layer"></span> on the Layers panel), .
 
-We'll start with an outline. The simplest way to outline an isometric shape is to think if it in two dimensions, skewed into a three dimensional perspective. Draw one side of the cube using the [2:1 lines discussed earlier][1].
+We'll start with an outline. The simplest way to outline an isometric shape is to think if it in two dimensions, skewed into a three dimensional perspective. Draw one side of the cube using the [2:1 lines discussed earlier](#the-basic-isometric-line).
 
 We'll start with a plain line the width of our upcoming cube. Keep to the 2:1 pixel ratio.
 
@@ -132,14 +132,9 @@ As a quick example of combining shapes, this example creates a cube which has sl
 
 -->
 
-[Read Chapter 1][../chapter-1-introduction/]
+[Read Chapter 1](../chapter-1-introduction/)
 
-[Read Chapter 3][../chapter-3-colors-outlines-and-lighting/]
+[Read Chapter 3](../chapter-3-colors-outlines-and-lighting/)
 
-[Isometric Pixel Art Guide Home][../]
+[Isometric Pixel Art Guide Home](../)
 
-
-
- [1]: #toc-the-basic-isometric-line
- [2]: /isometric-pixel-art-guide/chapter-3-colors-outlines-and-lighting/
- [3]: /isometric-pixel-art-guide/
