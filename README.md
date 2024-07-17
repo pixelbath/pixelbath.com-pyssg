@@ -22,7 +22,7 @@ Thanks, Thea!
     * To theme?
     * To spec?
 * Doodads
-    * File type icons (clear-photoshops-swatch-palette)
+    * File type icons (clear-photoshops-swatch-palette, visual-studio-cuddly-braces)
     * External link indicators
     * Syntax highlighting extras (line numbers, copy, etc)
     * Link buttons
