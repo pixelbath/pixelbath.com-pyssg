@@ -11,6 +11,7 @@ a:hover {
 }
 p {
     color: #333;
+    clear: both;
 }
 h1,h2 {
     color: #333;
@@ -20,14 +21,31 @@ h1,h2 {
 h2 {
     font-size: 18pt;
 }
+h3 {
+    color: #666;
+    font-weight: normal;
+    font-size: 16pt;
+}
+.alignleft {
+    float: left;
+    clear: left;
+}
 .aligncenter {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    clear: both;
 }
 .alignright {
     float: right;
+    clear: right;
     margin-left: 0.7em;
+}
+img.alignright {
+    margin: 0 0 0.5em 1em;
+}
+img.alignleft {
+    margin: 0.5em 1em 0 0;
 }
 .image-caption {
     background-color: #d5d5d5;
@@ -97,6 +115,7 @@ header a.logo {
 }
 nav.header {
     float: right;
+    margin: 1em 0 0 auto;
 }
 @media screen and (max-width: 500px) {
     header a {
@@ -112,7 +131,7 @@ nav.header {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #112;
+        background-color: #0a0a11;
         color: #c9cdd0;
     }
     p {
@@ -121,11 +140,14 @@ nav.header {
     h1,h2 {
         color: #adb4ba;
     }
+    h3 {
+        color: #999;
+    }
     .image-caption {
-        background-color: #333;
+        background-color: #555;
     }
     .image-caption p {
-        color: #ccc;
+        color: #ddd;
     }
 }
   
