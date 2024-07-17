@@ -38,5 +38,6 @@ Thanks, Thea!
     * `/page/1/` redirect to `/`
 * Comment system iframe
 * LESS?
-* Dark mode, light mode
+* ~~Dark mode, light mode~~
+    * selector
 * Responsive design
