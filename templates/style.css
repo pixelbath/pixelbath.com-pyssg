@@ -41,11 +41,11 @@ header {
 header a {
     font-family: Helvetica, Helvetica Nueue, Arial, sans-serif;
     text-align: center;
+    text-transform: lowercase;
     padding: 12px;
     text-decoration: none;
     font-size: 17pt; 
     line-height: 25px;
-    border-radius: 4px;
 }
 header a.logo {
     float: left;
@@ -55,6 +55,10 @@ header a.logo {
 nav.header {
     float: right;
     margin: 1em 0 0 auto;
+}
+nav.header a:hover {
+    transition: border-bottom,.5s;
+    border-bottom: 2px solid #95CB14;
 }
 
 /* layout */
