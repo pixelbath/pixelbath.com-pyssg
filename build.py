@@ -18,6 +18,8 @@ output_folder = './output'
 output_static = output_folder + '/static'
 output_images = output_folder + '/images'
 webroot = ''
+posts_per_page = 6
+posts_per_feed = 10
 
 markdown_ = markdown.Markdown(
     extensions=[
@@ -37,6 +39,7 @@ categories = []
 tags = []
 posts_by_date = {}
 posts_by_tag = {}
+posts_by_category = {}
 
 # delete and re-create output folders
 try:
@@ -110,10 +113,11 @@ import pathlib
 
 def render_page_folder(pages_path, output_folder):
     def process_file(source, relative_path):
-        print(f"Processing page {source}")
+        # print(f"Processing page {source}")
         content = render_markdown(source.read_text())
         if content is None:
             return
+
         output_path = pathlib.Path(output_folder) / relative_path / f"{source.stem}/index.html"
         if source.stem.endswith('index'):
             output_path = pathlib.Path(output_folder) / relative_path / f"index.html"
@@ -136,25 +140,21 @@ def render_page_folder(pages_path, output_folder):
     base_folder = pathlib.Path(pages_path)
     traverse_folder(base_folder)
 
+# def render_post_summary(post: frontmatter.Post) -> str:
+#     return None
+
 render_page_folder('src/pages/', output_folder)
 
-for source in post_sources:
-    print(f"Processing post {source}")
-    post = frontmatter.load(str(source))
+def process_post(post: frontmatter.Post) -> str:
+    posts_by_date[post['date']] = post
 
-    posts_by_date[post['date']] = source.stem
-    post_cats = [x.strip() for x in post['categories'].split(',')]
-    categories = set().union(categories, post_cats)
     post_tags = [x.strip() for x in post['tags'].split(',')]
-    for tag in post_tags:
-        if tag not in posts_by_tag:
-            posts_by_tag[tag] = []
-        posts_by_tag[tag].append(source.stem)
+    # tags = set().union(tags, post_tags)
 
-    tags = set().union(tags, post_tags)
+    post_cats = [x.strip() for x in post['categories'].split(',')]
+    # categories = set().union(categories, post_cats)
 
     content = render_markdown(post.content)
-
     # set up paths and render content to template
     post['stem'] = source.stem
     output_path = pathlib.Path(output_folder) / post['date'].strftime('%Y/%m') / post['stem'] / 'index.html'
@@ -164,6 +164,22 @@ for source in post_sources:
     # ensure output directory exists
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(rendered, encoding="utf-8")
+
+# run through posts and build dicts
+for source in post_sources:
+    # print(f"Processing post {source}")
+    post = frontmatter.load(str(source))
+    process_post(post)
+
+# start pagination and re-sort everything by reverse chrono
+page_counter = 1
+page_number = 1
+posts_by_date = sorted(posts_by_date.items(), reverse=True)
+# print(posts_by_date)
+# for post_date, post in posts_by_date:
+#     output_path = pathlib.Path(output_folder) / 'page' / page_number / 'index.html'
+#     print(output_path)
+
 
 # write syntax highlighting stylesheet
 css = highlighting.get_style_css('native')
@@ -176,7 +192,6 @@ copy('./templates/style.css', "{}/static/".format(output_folder))
 copytree('./src/images', "{}/images".format(output_folder), dirs_exist_ok=True)
 
 # Generate RSS
-# posts_by_date = sorted(posts_by_date.items(), reverse=True)[:10]
 # template = jinja_env.get_template('rss.xml')
 # rendered = template.render(post=post, content=content)
 
