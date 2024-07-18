@@ -193,6 +193,14 @@ def get_post_summary(post: frontmatter.Post) -> str:
     else:
         return post.content
 
+def markdown_heirarchy_down(in_content:str) -> str:
+    out_content = in_content.replace('####', '#####')
+    out_content = in_content.replace('###', '####')
+    out_content = in_content.replace('##', '###')
+    out_content = in_content.replace('#', '##')
+    return out_content
+
+
 # take a list of posts and generate pages of them
 def process_pagination(base_path: str, posts: list) -> None:
     page_counter = 1
@@ -211,6 +219,7 @@ def process_pagination(base_path: str, posts: list) -> None:
         page_posts = []
         for key in list(posts.keys())[start_index:end_index]:
             post = posts[key]
+            post.content = markdown_heirarchy_down(post.content)
             post.content = render_markdown(get_post_summary(post))
             page_posts.append(post)
         
