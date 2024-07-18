@@ -72,10 +72,14 @@ def render_markdown(content: str) -> str:
     soup = BeautifulSoup(content, features='lxml')
     captions = soup.find_all('div', {'class': 'image-caption'})
     for caption in captions:
+        # print(f"  Caption: {caption}")
         caption_text = ''
+        # for those situations where there is 
         for caption_seg in caption.contents[1:]:
             caption_text += str(caption_seg)
-        content = content.replace(caption_text, f"<p class=\"caption-text\">{caption_text.strip()}</p>")
+        
+        if len(caption_text) > 1:
+            content = content.replace(caption_text, f"<p class=\"caption-text\">{caption_text.strip()}</p>")
     
     # TODO: update gallery layouts
     return content
@@ -149,6 +153,7 @@ def process_page_folder(pages_path: str, output_folder: str) -> None:
 # also updates cumulative variables posts_by_date, posts_by_tag, posts_by_cat, post_tags, and post_cats for later use.
 def process_post_folder(posts_path: str, output_folder: str) -> None:
     post_sources = pathlib.Path(posts_path).glob('*.md')
+    global posts_by_date
 
     print("Build individual post pages.")
     for source in post_sources:
@@ -173,7 +178,13 @@ def process_post_folder(posts_path: str, output_folder: str) -> None:
         # ensure output directory exists
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(rendered, encoding="utf-8")
+    
+    # convert unsorted dict to a sorted dict because...python
+    new_posts_by_date = {}
+    for post_date in sorted(posts_by_date.keys(), reverse=True):
+        new_posts_by_date[post_date] = posts_by_date[post_date]
 
+    posts_by_date = new_posts_by_date
 
 def get_post_summary(post: frontmatter.Post) -> str:
     summary_index = post.content.find('<!-- more -->')
@@ -189,29 +200,32 @@ def process_pagination(base_path: str, posts: list) -> None:
 
     content = ''
     
-    print(f"Build pagination for {base_path}")
-    for key in posts:
-        post = posts[key]
-        output_path = pathlib.Path(output_folder) / base_path / 'index.html'
-        if page_number > 1:
+    print(f"  Build pagination for {base_path}")
+    posts_per_page = 6
+    total_posts = len(posts)
+
+    for page_number in range(1, (total_posts - 1) // posts_per_page + 2):
+        start_index = (page_number - 1) * posts_per_page
+        end_index = min(start_index + posts_per_page, total_posts)
+        
+        page_posts = []
+        for key in list(posts.keys())[start_index:end_index]:
+            post = posts[key]
+            post.content = render_markdown(get_post_summary(post))
+            page_posts.append(post)
+        
+        if page_number == 1:
+            output_path = pathlib.Path(output_folder) / base_path / 'index.html'
+        else:
             output_path = pathlib.Path(output_folder) / base_path / 'page' / str(page_number) / 'index.html'
         
-        content += render_markdown(get_post_summary(post))
-        print(f"  Post {page_counter}, pg {page_number}: {post['title']} -> {output_path}")
+        print(f"    Write {output_path}")
+        template = jinja_env.get_template('posts.html')
+        rendered = template.render(posts=page_posts, page_title='Posts')
         
-        page_counter += 1
-        if page_counter > posts_per_page:
-            # TODO: make this work in a template
-            # write file since the posts_per_page is reached
-            print(f"    Write {output_path}")
-            template = jinja_env.get_template('posts.html')
-            rendered = template.render(posts=post)
-            output_path.parent.mkdir(parents=True, exist_ok=True)
-            output_path.write_text(rendered, encoding="utf-8")
-
-            page_counter = 1
-            page_number += 1
-        
+        # ensure path exists, and write file
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(rendered, encoding="utf-8")        
 
 # Create website Pages.
 process_page_folder('src/pages/', output_folder)
@@ -220,6 +234,7 @@ process_page_folder('src/pages/', output_folder)
 process_post_folder('src/posts/', output_folder)
 
 # Create pages of things.
+print(f"Process {len(posts_by_date)} posts by date.")
 process_pagination('.', posts_by_date)
 
 # write syntax highlighting stylesheet
