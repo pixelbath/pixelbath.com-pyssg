@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}{{page_title}}{% endblock %}
+
+{% block meta %}
+<meta property="og:title" content="{{page_title}}">
+
+{% if description %}
+<meta property="og:description" content="{{description}}">
+{% endif %}
+
+{% endblock %}
+
+<h1>{{ page_title }}</h1>
+
+{% block content %}
+{% for post in posts %}
+<article>
+  <aside>
+    <time>{{post['date'].strftime('%B %d, %Y')}}</time>
+  </aside>
+  <h2>{{post.title}}</h2>
+  <content>
+    {{post.content}}
+  </content>
+</article>
+{% endfor %}
+{% endblock %}

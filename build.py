@@ -122,11 +122,14 @@ def process_page_folder(pages_path: str, output_folder: str) -> None:
         output_path = pathlib.Path(output_folder) / relative_path / f"{source.stem}/index.html"
         if source.stem.endswith('index'):
             output_path = pathlib.Path(output_folder) / relative_path / f"index.html"
+
+        print(f"  {source} -> {output_path}")
         
         # ensure output directory exists
         output_path.parent.mkdir(parents=True, exist_ok=True)
         
         template = jinja_env.get_template('page.html')
+        # TODO: do something useful with title (read with bs4 or parse the markdown)
         rendered = template.render(title='Title', description='', content=content)
         with output_path.open('w', encoding='utf-8') as f:
             f.write(rendered)
@@ -138,6 +141,7 @@ def process_page_folder(pages_path: str, output_folder: str) -> None:
             elif item.is_dir():
                 traverse_folder(item, os.path.join(relative_path, item.name))
 
+    print("Build individual pages.")
     base_folder = pathlib.Path(pages_path)
     traverse_folder(base_folder)
 
@@ -146,6 +150,7 @@ def process_page_folder(pages_path: str, output_folder: str) -> None:
 def process_post_folder(posts_path: str, output_folder: str) -> None:
     post_sources = pathlib.Path(posts_path).glob('*.md')
 
+    print("Build individual post pages.")
     for source in post_sources:
         post = frontmatter.load(str(source))
         posts_by_date[post['date']] = post
@@ -157,9 +162,11 @@ def process_post_folder(posts_path: str, output_folder: str) -> None:
         # categories = set().union(categories, post_cats)
 
         content = render_markdown(post.content)
+        
         # set up paths and render content to template
         post['stem'] = source.stem
         output_path = pathlib.Path(output_folder) / post['date'].strftime('%Y/%m') / post['stem'] / 'index.html'
+        print(f"  {post['title']} -> {output_path}")
         template = jinja_env.get_template('post.html')
         rendered = template.render(post=post, content=content)
 
@@ -168,8 +175,43 @@ def process_post_folder(posts_path: str, output_folder: str) -> None:
         output_path.write_text(rendered, encoding="utf-8")
 
 
-# def render_post_summary(post: frontmatter.Post) -> str:
-#     return None
+def get_post_summary(post: frontmatter.Post) -> str:
+    summary_index = post.content.find('<!-- more -->')
+    if summary_index != -1:
+        return post.content[:summary_index]
+    else:
+        return post.content
+
+# take a list of posts and generate pages of them
+def process_pagination(base_path: str, posts: list) -> None:
+    page_counter = 1
+    page_number = 1
+
+    content = ''
+    
+    print(f"Build pagination for {base_path}")
+    for key in posts:
+        post = posts[key]
+        output_path = pathlib.Path(output_folder) / base_path / 'index.html'
+        if page_number > 1:
+            output_path = pathlib.Path(output_folder) / base_path / 'page' / str(page_number) / 'index.html'
+        
+        content += render_markdown(get_post_summary(post))
+        print(f"  Post {page_counter}, pg {page_number}: {post['title']} -> {output_path}")
+        
+        page_counter += 1
+        if page_counter > posts_per_page:
+            # TODO: make this work in a template
+            # write file since the posts_per_page is reached
+            print(f"    Write {output_path}")
+            template = jinja_env.get_template('posts.html')
+            rendered = template.render(posts=post)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(rendered, encoding="utf-8")
+
+            page_counter = 1
+            page_number += 1
+        
 
 # Create website Pages.
 process_page_folder('src/pages/', output_folder)
@@ -177,15 +219,8 @@ process_page_folder('src/pages/', output_folder)
 # Create website Posts.
 process_post_folder('src/posts/', output_folder)
 
-# start pagination and re-sort everything by reverse chrono
-page_counter = 1
-page_number = 1
-posts_by_date = sorted(posts_by_date.items(), reverse=True)
-# print(posts_by_date)
-# for post_date, post in posts_by_date:
-#     output_path = pathlib.Path(output_folder) / 'page' / page_number / 'index.html'
-#     print(output_path)
-
+# Create pages of things.
+process_pagination('.', posts_by_date)
 
 # write syntax highlighting stylesheet
 css = highlighting.get_style_css('native')
