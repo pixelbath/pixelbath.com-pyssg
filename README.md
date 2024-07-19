@@ -15,7 +15,7 @@ Thanks, Thea!
     * ~~will also need to parse relative/absolute image links in MD~~
 * ~~Emoji plugin~~
 * ~~RSS~~ - validates
-    * Get original post times again for that granularity
+    * Get original post times again for that granularity - also use a default if not present
 * ~~Keys plugin~~
     * ~~Update to exclude code blocks like RewriteRules~~
     * ~~Update source files to use new syntax~~
@@ -37,7 +37,7 @@ Thanks, Thea!
 * ~~Compile tags/cats~~
     * ~~group pages together~~
     * Generate pages for each
-* All posts pagination - reverse chrono
+* ~~All posts pagination - reverse chrono~~
     * `/page/1/` redirect to `/`
 * Comment system iframe
 * LESS?
