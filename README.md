@@ -15,10 +15,10 @@ Thanks, Thea!
     * ~~will also need to parse relative/absolute image links in MD~~
 * ~~Emoji plugin~~
 * ~~RSS~~ - validates
+    * Get original post times again for that granularity
 * ~~Keys plugin~~
     * ~~Update to exclude code blocks like RewriteRules~~
     * ~~Update source files to use new syntax~~
-    * Get original post times again for that granularity
 * Image resizing
     * To theme?
     * To spec?
