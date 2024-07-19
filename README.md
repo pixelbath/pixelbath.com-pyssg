@@ -14,10 +14,11 @@ Thanks, Thea!
 * ~~Base path to re-path all images to a common root~~
     * ~~will also need to parse relative/absolute image links in MD~~
 * ~~Emoji plugin~~
-* RSS
+* ~~RSS~~ - validates
 * ~~Keys plugin~~
     * ~~Update to exclude code blocks like RewriteRules~~
     * ~~Update source files to use new syntax~~
+    * Get original post times again for that granularity
 * Image resizing
     * To theme?
     * To spec?
@@ -31,7 +32,7 @@ Thanks, Thea!
     * ~~generative-art-google-logo - image captions~~
     * the-importance-of-order - image resizing/linking (if necessary, maybe just restrict size unless explicitly linking higher res)
 * Other handy tags
-    * `<!--more-->`
+    * ~~`<!-- more -->`~~ - works in summary pages and feed
     * ~~`<!--TOC-->`~~ - now [TOC]
 * ~~Compile tags/cats~~
     * ~~group pages together~~

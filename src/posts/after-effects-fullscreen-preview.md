@@ -16,7 +16,7 @@ You can stretch to the edges, but there's still a border.
 
 Even with this setup, I've been rendering drafts to an mp4 file and running a video player fullscreen on the HDTV (which matches the production environment). This is still a step I'd rather not have to do, so finally today I did some searching.
 
-&#8216;Lo, and behold! There _is_ a way.
+'Lo, and behold! There _is_ a way.
 
 According to Adobe documentation, [ Ctrl ]+[ \ ] ([ Cmd ]+[ \ ] on Mac) does the following:
 

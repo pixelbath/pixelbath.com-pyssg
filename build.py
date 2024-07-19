@@ -1,6 +1,7 @@
 
 import os
 import pathlib
+import datetime
 import markdown
 import markdown.extensions.fenced_code
 import frontmatter
@@ -88,7 +89,7 @@ def key_upper_repl(match):
     return '<span class="key-button">' + match.group(1).upper() + '</span>'
 
 def render_keybuttons(content: str) -> str:
-    content = re.sub(r'\[ cmd \]', '<span class="key-button"><span class="unicode">⌘</span>', content, flags=re.IGNORECASE)
+    content = re.sub(r'\[ cmd \]', '<span class="key-button"><span class="unicode">⌘</span></span>', content, flags=re.IGNORECASE)
     content = re.sub(r'\[ ctrl \]', '<span class="key-button">Ctrl</span>', content, flags=re.IGNORECASE)
     content = re.sub(r'\[ alt \]', '<span class="key-button">Alt</span>', content, flags=re.IGNORECASE)
     content = re.sub(r'\[ shift \]', '<span class="key-button"><span class="unicode">⇧</span> Shift</span>', content, flags=re.IGNORECASE)
@@ -158,7 +159,6 @@ def process_post_folder(posts_path: str, output_folder: str) -> None:
     print("Build individual post pages.")
     for source in post_sources:
         post = frontmatter.load(str(source))
-        posts_by_date[post['date']] = post
 
         post_tags = [x.strip() for x in post['tags'].split(',')]
         # tags = set().union(tags, post_tags)
@@ -170,7 +170,12 @@ def process_post_folder(posts_path: str, output_folder: str) -> None:
         
         # set up paths and render content to template
         post['stem'] = source.stem
+        post['permalink'] = f"/{post['date'].strftime('%Y/%m')}/{post['stem']}/"
+        post['summary'] = render_markdown(get_post_summary(post.content))
         output_path = pathlib.Path(output_folder) / post['date'].strftime('%Y/%m') / post['stem'] / 'index.html'
+        
+        posts_by_date[post['date']] = post
+        
         print(f"  {post['title']} -> {output_path}")
         template = jinja_env.get_template('post.html')
         rendered = template.render(post=post, content=content)
@@ -186,12 +191,12 @@ def process_post_folder(posts_path: str, output_folder: str) -> None:
 
     posts_by_date = new_posts_by_date
 
-def get_post_summary(post: frontmatter.Post) -> str:
-    summary_index = post.content.find('<!-- more -->')
+def get_post_summary(content: str) -> str:
+    summary_index = content.find('<!-- more -->')
     if summary_index != -1:
-        return post.content[:summary_index]
+        return content[:summary_index]
     else:
-        return post.content
+        return content
 
 def markdown_heirarchy_down(in_content:str) -> str:
     out_content = in_content.replace('####', '#####')
@@ -209,7 +214,7 @@ def process_pagination(base_path: str, posts: list) -> None:
     content = ''
     
     print(f"  Build pagination for {base_path}")
-    posts_per_page = 6
+    global posts_per_page
     total_posts = len(posts)
 
     for page_number in range(1, (total_posts - 1) // posts_per_page + 2):
@@ -219,8 +224,7 @@ def process_pagination(base_path: str, posts: list) -> None:
         page_posts = []
         for key in list(posts.keys())[start_index:end_index]:
             post = posts[key]
-            post.content = markdown_heirarchy_down(post.content)
-            post.content = render_markdown(get_post_summary(post))
+            post.content = render_markdown(get_post_summary(markdown_heirarchy_down(post.content)))
             page_posts.append(post)
         
         if page_number == 1:
@@ -257,8 +261,10 @@ copy('./templates/style.css', "{}/static/".format(output_folder))
 copytree('./src/images', "{}/images".format(output_folder), dirs_exist_ok=True)
 
 # Generate RSS
-# template = jinja_env.get_template('rss.xml')
-# rendered = template.render(post=post, content=content)
+template = jinja_env.get_template('rss.xml')
+rendered = template.render(posts=posts_by_date, last_updated=datetime.datetime.now(datetime.UTC))
+output_path = pathlib.Path(output_folder) / 'feed.xml'
+output_path.write_text(rendered, encoding="utf-8")
 
 # debug stuff
 # print (f"Posts by date: {posts_by_date}")

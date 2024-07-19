@@ -3,18 +3,21 @@
 
   <title>Pixelbath</title>
   <link href="https://www.pixelbath.com/"/>
-  <updated>{{ last_updated }}</updated>
+  <link rel="self" type="application/atom+xml" href="https://www.pixelbath.com/feed.xml" />
+  <updated>{{ last_updated.isoformat() }}</updated>
   <author>
     <name>Michael Hoskins</name>
   </author>
   <id>https://www.pixelbath.com/</id>
-{% for post in posts %}
+{% for post_date in posts %}
   <entry>
-    <title>{{ post_title }}</title>
+    <title>{{ posts[post_date].title }}</title>
     <link href="{{ post_link }}"/>
-    <id>{{ post_link }}</id>
-    <updated>{{ post_date }}</updated>
-    <summary>{{ post_summary }}</summary>
+    <id>https://www.pixelbath.com/{{ posts[post_date].permalink }}</id>
+    <updated>{{ post_date }}T02:04:30.077643+00:00</updated>
+    <content type="xhtml" xml:lang="en">
+      <div xmlns="http://www.w3.org/1999/xhtml">{{ posts[post_date].summary }}</div>
+    </content>
   </entry>
 {% endfor %}
 </feed>
