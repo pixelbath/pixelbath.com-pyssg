@@ -16,27 +16,18 @@ Moving on from this specific example, there are other rich datasets that could b
 
 In my personal life, I've been slowly replacing the applications I use with open source alternatives wherever possible.
 
-  * Photoshop &#8211; In progress (forked last open source version of Paint.Net)
-  * After Effects &#8211; Todo (there is almost no program like this, holy shit)
-  * Gmail &#8211; In progress (already using my own domain, need to set up Postfix/Dovecot)
-  * Dropbox &#8211; In progress (testing an [ownCloud][1]{.external} instance)
-  * Reaper &#8211; While there is a Linux version available, the VST scene on Linux is not as great. I may just keep a Windows machine around for running VSTs.
+* Photoshop &#8211; - Affinity Photo
+* After Effects &#8211; Todo (there is almost no program like this, holy shit)
+* Gmail &#8211; In progress (already using my own domain, need to set up Postfix/Dovecot)
+* Dropbox &#8211; - [Nextcloud](https://www.nextcloud.org/)
+* Reaper &#8211; While there is a Linux version available, the VST scene on Linux is not as great. I may just keep a Windows machine around for running VSTs.
 
 ### Open Data
 
 Lately, I've also actively contributing to open datasets, open source software, and anything that contributes to the common good. I don't like the idea of some of our most valuable datasets being locked up in proprietary data centers.
 
-  * [OpenStreetMap][2]
-  * [Zooniverse][3] &#8211; While data contributed is not necessarily open, results derived from the data in Zooniverse projects must publish those results to the community.
-  * [American Archive FixItPlus][4] &#8211; Transcribe subtitles for classic radio and television broadcasts.
-  * [OpenTopography][5] &#8211; High-resolution topography data and tools.
-  * [Wikipedia List of crowdsourcing projects][6] &#8211; Likely a much more exhaustive and obsessively-curated list than here.
-
-
-
- [1]: https://owncloud.org/
- [2]: https://www.openstreetmap.org/
- [3]: https://www.zooniverse.org/
- [4]: http://fixitplus.americanarchive.org/
- [5]: http://opentopo.sdsc.edu/dataspace/datasets
- [6]: https://en.wikipedia.org/wiki/List_of_crowdsourcing_projects
+* [OpenStreetMap](https://www.openstreetmap.org/)
+* [Zooniverse](https://www.zooniverse.org/) &#8211; While data contributed is not necessarily open, results derived from the data in Zooniverse projects must publish those results to the community.
+* [American Archive FixItPlus](http://fixitplus.americanarchive.org/) &#8211; Transcribe subtitles for classic radio and television broadcasts.
+* [OpenTopography](http://opentopo.sdsc.edu/dataspace/datasets) &#8211; High-resolution topography data and tools.
+* [Wikipedia List of crowdsourcing projects](https://en.wikipedia.org/wiki/List_of_crowdsourcing_projects) &#8211; Likely a much more exhaustive and obsessively-curated list than here.
