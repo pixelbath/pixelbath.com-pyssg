@@ -4,3 +4,4 @@ python-frontmatter
 pygments
 lxml
 bs4
+mysql-connector

@@ -14,6 +14,27 @@ from pprint import pprint
 from bs4 import BeautifulSoup
 import re
 
+import mysql.connector
+from config import db_password 
+
+mydb = mysql.connector.connect(
+  host="192.168.1.13",
+  user="michael",
+  db="",
+  password=db_password
+)
+cur = mydb.cursor()
+cur.execute("SELECT * FROM YOUR_TABLE_NAME")
+print(mydb)
+
+# print all the first cell of all the rows
+for row in cur.fetchall():
+    print(row[0])
+
+db.close()
+
+exit()
+
 output_folder = './output'
 output_static = output_folder + '/static'
 output_images = output_folder + '/images'
