@@ -14,7 +14,7 @@ Thanks, Thea!
 * ~~Base path to re-path all images to a common root~~
     * ~~will also need to parse relative/absolute image links in MD~~
 * ~~Emoji plugin~~
-* Navigation (links looks like WordPress routes)
+* ~~Navigation (links looks like WordPress routes)~~
     * ~~Pagination - link format is `/page/pageNum/`~~
         * ~~First page has no "Newer Posts", last has no "Older Posts"~~
     * ~~Each post emits tags as links at the bottom - each tag links to `/tag/tag-name/`~~
@@ -52,4 +52,3 @@ Thanks, Thea!
 * Responsive design
 * Process gallery sections using bs4 - keep JS minimal
 * Replicate existing site "close enough"
-* Responsiveness
