@@ -14,7 +14,12 @@ Thanks, Thea!
 * ~~Base path to re-path all images to a common root~~
     * ~~will also need to parse relative/absolute image links in MD~~
 * ~~Emoji plugin~~
-* ~~RSS~~ - validates
+* Navigation (links looks like WordPress routes)
+    * Pagination - link format is `/page/pageNum/`
+        * First page has no "Newer Posts", last has no "Older Posts"
+    * Each post emits tags as links at the bottom - each tag links to `/tag/tag-name`
+    * Each post lists categories below the title - each cat links to `/category/category-name`
+* ~~RSS~~ validates
     * Get original post times again for that granularity - also use a default if not present
 * ~~Keys plugin~~
     * ~~Update to exclude code blocks like RewriteRules~~
@@ -34,11 +39,11 @@ Thanks, Thea!
 * Other handy tags
     * ~~`<!-- more -->`~~ - works in summary pages and feed
     * ~~`<!--TOC-->`~~ - now [TOC]
-* ~~Compile tags/cats~~
-    * ~~group pages together~~
-    * Generate pages for each
+* Compile tags/cats
+    * Generate pages for tags - `/tag/tag-name`
+    * Generate pages for cats - `/category/category-name`
 * ~~All posts pagination - reverse chrono~~
-    * `/page/1/` redirect to `/`
+    * `/page/1/` redirect to `/` - .htaccess?
 * Comment system iframe
 * LESS?
 * ~~Dark mode, light mode~~
