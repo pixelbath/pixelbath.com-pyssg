@@ -153,30 +153,41 @@ def process_page_folder(pages_path: str, output_folder: str) -> None:
 
 # build all blog posts using frontmatter to structure backward-compatible permalinks
 # also updates cumulative variables posts_by_date, posts_by_tag, posts_by_cat, post_tags, and post_cats for later use.
+def slugify(name: str) -> str:
+    return re.sub(r'[^a-z0-9]+', '-', name.strip().lower()).strip('-')
+
 def process_post_folder(posts_path: str, output_folder: str) -> None:
     post_sources = pathlib.Path(posts_path).glob('*.md')
-    global posts_by_date
+    global posts_by_date, posts_by_tag, posts_by_category
 
     print("Build individual post pages.")
     for source in post_sources:
         post = frontmatter.load(str(source))
 
-        post_tags = [x.strip() for x in post['tags'].split(',')]
-        # tags = set().union(tags, post_tags)
-
-        post_cats = [x.strip() for x in post['categories'].split(',')]
-        # categories = set().union(categories, post_cats)
+        # build tag and category lists with slugs for linking
+        post_tags = [{'name': t.strip(), 'slug': slugify(t)} for t in post['tags'].split(',') if t.strip()]
+        post_cats = [{'name': c.strip(), 'slug': slugify(c)} for c in post['categories'].split(',') if c.strip()]
+        post['tags_list'] = post_tags
+        post['categories_list'] = post_cats
 
         content = render_markdown(post.content)
-        
+
         # set up paths and render content to template
         post['stem'] = source.stem
         post['permalink'] = f"/{post['date'].strftime('%Y/%m')}/{post['stem']}/"
         post['summary'] = render_markdown(get_post_summary(post.content))
         output_path = pathlib.Path(output_folder) / post['date'].strftime('%Y/%m') / post['stem'] / 'index.html'
-        
+
         posts_by_date[post['date']] = post
-        
+
+        # accumulate posts per tag and category
+        for tag in post_tags:
+            posts_by_tag.setdefault(tag['slug'], {'name': tag['name'], 'posts': {}})
+            posts_by_tag[tag['slug']]['posts'][post['date']] = post
+        for cat in post_cats:
+            posts_by_category.setdefault(cat['slug'], {'name': cat['name'], 'posts': {}})
+            posts_by_category[cat['slug']]['posts'][post['date']] = post
+
         print(f"  {post['title']} -> {output_path}")
         template = jinja_env.get_template('post.html')
         rendered = template.render(post=post, content=content)
@@ -184,7 +195,7 @@ def process_post_folder(posts_path: str, output_folder: str) -> None:
         # ensure output directory exists
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(rendered, encoding="utf-8")
-    
+
     # convert unsorted dict to a sorted dict because...python
     new_posts_by_date = {}
     for post_date in sorted(posts_by_date.keys(), reverse=True):
@@ -208,35 +219,45 @@ def markdown_heirarchy_down(in_content:str) -> str:
 
 
 # take a list of posts and generate pages of them
-def process_pagination(base_path: str, posts: list) -> None:
-    page_counter = 1
-    page_number = 1
-
-    content = ''
-    
+def process_pagination(base_path: str, posts: list, page_title: str = 'Posts') -> None:
     print(f"  Build pagination for {base_path}")
     global posts_per_page
     total_posts = len(posts)
+    total_pages = max(1, (total_posts - 1) // posts_per_page + 1)
 
-    for page_number in range(1, (total_posts - 1) // posts_per_page + 2):
+    # resolve the base URL prefix for pagination links
+    base_url = '/' if base_path == '.' else f'/{base_path}/'
+
+    for page_number in range(1, total_pages + 1):
         start_index = (page_number - 1) * posts_per_page
         end_index = min(start_index + posts_per_page, total_posts)
-        
+
         page_posts = []
         for key in list(posts.keys())[start_index:end_index]:
             post = posts[key]
             post.content = render_markdown(get_post_summary(markdown_heirarchy_down(post.content)))
             page_posts.append(post)
-        
+
         if page_number == 1:
             output_path = pathlib.Path(output_folder) / base_path / 'index.html'
+            prev_url = None
         else:
             output_path = pathlib.Path(output_folder) / base_path / 'page' / str(page_number) / 'index.html'
-        
+            prev_url = base_url if page_number == 2 else f'{base_url}page/{page_number - 1}/'
+
+        next_url = f'{base_url}page/{page_number + 1}/' if page_number < total_pages else None
+
         print(f"    Write {output_path}")
         template = jinja_env.get_template('posts.html')
-        rendered = template.render(posts=page_posts, page_title='Posts')
-        
+        rendered = template.render(
+            posts=page_posts,
+            page_title=page_title,
+            page_number=page_number,
+            total_pages=total_pages,
+            prev_url=prev_url,
+            next_url=next_url,
+        )
+
         # ensure path exists, and write file
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(rendered, encoding="utf-8")        
@@ -250,6 +271,15 @@ process_post_folder('src/posts/', output_folder)
 # Create pages of things.
 print(f"Process {len(posts_by_date)} posts by date.")
 process_pagination('.', posts_by_date)
+
+# Create tag and category archive pages.
+print(f"Process {len(posts_by_tag)} tags.")
+for slug, data in posts_by_tag.items():
+    process_pagination(f'tag/{slug}', data['posts'], page_title=f"Tag: {data['name']}")
+
+print(f"Process {len(posts_by_category)} categories.")
+for slug, data in posts_by_category.items():
+    process_pagination(f'category/{slug}', data['posts'], page_title=f"Category: {data['name']}")
 
 # write syntax highlighting stylesheet
 css = highlighting.get_style_css('native')

@@ -70,6 +70,7 @@ nav.header a:hover {
 .alignleft {
     float: left;
     clear: left;
+    max-width: 400px;
 }
 .aligncenter {
     display: block;
@@ -81,12 +82,18 @@ nav.header a:hover {
     float: right;
     clear: right;
     margin-left: 0.7em;
+    max-width: 400px;
 }
 img.alignright {
     margin: 0 0 0.5em 1em;
+    max-width: 400px;
 }
 img.alignleft {
     margin: 0.5em 1em 0 0;
+    max-width: 400px;
+}
+img.aligncenter {
+    max-width: 800px;
 }
 .image-caption {
     background-color: #d5d5d5;
@@ -100,6 +107,10 @@ img.alignleft {
 }
 .image-caption img {
     margin: 4px;
+}
+.image-caption.alignleft img,
+.image-caption.alignright img {
+    max-width: 400px;
 }
 .image-caption p {
     margin: 0.5em;
