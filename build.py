@@ -106,6 +106,8 @@ def render_filelinks(content: str) -> str:
         href = match.group(1)
         text = match.group(2)
         ext = href.rsplit('.', 1)[-1].lower()
+        if ext in ('html', 'htm', 'php', 'asp', 'aspx'):
+            return match.group(0)
         return f'<a class="button-std file-icon icon-{ext}" href="{href}">{text}</a>'
     return re.sub(r'<a href="([^"]*\.[^/"<>]{1,10})">(.*?)</a>', filelink_repl, content)
 
