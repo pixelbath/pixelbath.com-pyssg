@@ -35,6 +35,7 @@ markdown_ = markdown.Markdown(
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader('templates'),
 )
+jinja_env.globals['now'] = datetime.datetime.now()
 
 categories = []
 tags = []

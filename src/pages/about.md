@@ -10,14 +10,28 @@ I'm available for freelance requests on an ongoing basis, provided I am not too 
 ### Play
 I've been a lover of video games for almost as long as I can remember, and an avid programmer for nearly as long. In elementary school, one of our classes had a [TI-99/4A](http://en.wikipedia.org/wiki/Texas_Instruments_TI-99/4A) with a few games on it. From that moment on, I was captivated by the capabilities of computers and the potential they contained for entertainment.
 
-<span class="image-caption alignleft"><img alt="Commodore 64" src="../images/Commodore-64-Computer.png" /><br>The "Breadbox"</span> Sometime around third or fourth grade, I received a second-hand Commodore 64 (with disk and tape drives!), along with a couple programming manuals for the system. As it turned out, these would be instrumental in showing me the computer not just as a consumer device, but as something that could be commanded to carry out the user's will (provided you could learn the syntax). These manuals, along with the magazine *[3-2-1 Contact](http://en.wikipedia.org/wiki/3-2-1_Contact#The_magazine)*, taught me the basics of BASIC which came in handy during the Apple IIe-era of school computing. I believe before the class even started, I'd already wowed the person next to me with my fancy:
+<div class="image-caption alignleft">
+
+<img alt="Commodore 64" src="../images/Commodore-64-Computer.png" />
+
+The "Breadbox"
+</div>
+
+Sometime around third or fourth grade, I received a second-hand Commodore 64 (with disk and tape drives!), along with a couple programming manuals for the system. As it turned out, these would be instrumental in showing me the computer not just as a consumer device, but as something that could be commanded to carry out the user's will (provided you could learn the syntax). These manuals, along with the magazine *[3-2-1 Contact](http://en.wikipedia.org/wiki/3-2-1_Contact#The_magazine)*, taught me the basics of BASIC which came in handy during the Apple IIe-era of school computing. I believe before the class even started, I'd already wowed the person next to me with my fancy:
 
 ```basic
 10 PRINT "MICHAEL IS COOL."
 20 GOTO 10
 ```
 
-We learned to use [LOGO](https://en.wikipedia.org/wiki/Logo_(programming_language)), but the pen-based drawing didn't make much sense to me at the time. Why use such a slow method of drawing when you could just jam everything into a sprite and blit it anywhere you want? Anyway, after middle school I didn't do much with computers. <span class="image-caption alignright"><img alt="A1000" src="../images/A1000.jpg" /><br>How do I love thee? Let me `set count <theways$1000>`</span> I occasionally used a friend's Amiga 1000 (with RAM expansion and **two** floppy drives, thank you very much) as often as I could, checking out the newest games along with its thriving demo scene. After high school, I moved to Houston, and began to reap the benefits that urban living brings. Now able to get a reliable and fairly cheap Internet connection, I began a new obsession: to *learn*. I was determined to soak up any new technology that the web had to offer.
+We learned to use [LOGO](https://en.wikipedia.org/wiki/Logo_(programming_language)), but the pen-based drawing didn't make much sense to me at the time. Why use such a slow method of drawing when you could just jam everything into a sprite and blit it anywhere you want? Anyway, after middle school I didn't do much with computers. <div class="image-caption alignright">
+
+<img alt="A1000" src="../images/A1000.jpg" />
+
+How do I love thee? Let me `set count <theways$1000>`
+</div>
+
+I occasionally used a friend's Amiga 1000 (with RAM expansion and **two** floppy drives, thank you very much) as often as I could, checking out the newest games along with its thriving demo scene. After high school, I moved to Houston, and began to reap the benefits that urban living brings. Now able to get a reliable and fairly cheap Internet connection, I began a new obsession: to *learn*. I was determined to soak up any new technology that the web had to offer.
 
 During this period I began to learn HTML, and while helping others with specific needs for their sites, began to pick up some ASP (at the time, Microsoft products were trivially easy to begin developing with, unlike the Rubies and Railcars of today), and then PHP. I was tempted by the versatile allure of Java and its oft-repeated "Write-Once-Run-Anywhere!" mantra, but didn't understand what all those extra words meant: "Public static void main? That's ridiculous; why can't I just write the function name?"
 

@@ -7,7 +7,7 @@ tags: clear, palette, photoshop, swatch, swatches
 
 <div class="image-caption alignright">
 
-![The Photoshop swatch palette](../images/photoshop-swatch-palette.png)
+<img alt="The Photoshop swatch palette" src="../images/photoshop-swatch-palette.png" />
 
 Everybody wants a rainbow, apparently.
 </div>
