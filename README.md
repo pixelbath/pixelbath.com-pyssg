@@ -6,7 +6,18 @@ Thanks, Thea!
 
 ## Requirements
 * Python 3
-* `pip3 install -r requirements.txt`
+
+### First-time setup
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Subsequent sessions
+```
+source venv/bin/activate
+```
 
 ## Build
 * `python3 build.py`

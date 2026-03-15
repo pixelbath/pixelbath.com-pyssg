@@ -29,6 +29,7 @@ markdown_ = markdown.Markdown(
         "abbr",
         "fenced_code",
         "extra",
+        "pymdownx.tilde",
     ]
 )
 
