@@ -7,7 +7,7 @@ Using and selecting the correct colors to use for your isometric pixel art is on
 ### Lighting
 
 <div class="image-caption aligncenter">
-<img alt="Basic lighting" src="../../images/isometric-pixel-art/basic-lighting-topleft.png" />
+<img alt="Basic lighting" src="..//images/isometric-pixel-art/basic-lighting-topleft.png" />
 3.1: A scene lit from the top-left.
 </div>
 
@@ -22,7 +22,7 @@ Outlining and highlighting your buildings and objects makes them stand out more,
 Choosing the type of outline is the point you decide on the style you are shooting for. As stated previously, black outlines give your scenes a cartoonish feel, particularly when combined with bright, saturated colors. Shaded outlines are comprised of the base color, but darkened. This has the benefit of providing a defining outline, but without popping the art off the page like a black outline would.
 
 <div class="image-caption aligncenter">
-<img alt="Outline examples" src="../../images/isometric-pixel-art/outline-styles.png" />
+<img alt="Outline examples" src="..//images/isometric-pixel-art/outline-styles.png" />
 3.2: Three examples of object outlining.
 </div>
 

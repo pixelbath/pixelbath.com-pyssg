@@ -17,7 +17,7 @@ The most appealing aspect of developing on these platforms is the artificially-i
 
 <div class="image-caption alignright">
 
-<img alt="Pico-8 Demo Cart" src="../images/jelpi_demo.gif" />
+<img alt="Pico-8 Demo Cart" src="/images/jelpi_demo.gif" />
 
 Pico-8 demo cart
 </div>
@@ -36,10 +36,10 @@ While you'd think that being limited to 128×128 pixels with only 16 colors at a
 
 <div class="image-caption aligncenter">
 
-<a href="https://freds72.itch.io/virtua-racing"><img alt="Virtua Racing" src="../images/pico8-virtuaracing2.gif" /></a>
-<a href="https://krajzeg.itch.io/dank-tomb"><img alt="Dank Tomb" src="../images/pico8-danktomb2.gif" /></a>
-<a href="https://wombart.itch.io/league-of-pico"><img alt="League of Pico" src="../images/pico8-leagueofpico2.gif" /></a>
-<a href="https://www.lexaloffle.com/bbs/?tid=32724"><img alt="Low Mem Sky" src="../images/pico8-lowmemsky2.gif" /></a>
+<a href="https://freds72.itch.io/virtua-racing"><img alt="Virtua Racing" src="/images/pico8-virtuaracing2.gif" /></a>
+<a href="https://krajzeg.itch.io/dank-tomb"><img alt="Dank Tomb" src="/images/pico8-danktomb2.gif" /></a>
+<a href="https://wombart.itch.io/league-of-pico"><img alt="League of Pico" src="/images/pico8-leagueofpico2.gif" /></a>
+<a href="https://www.lexaloffle.com/bbs/?tid=32724"><img alt="Low Mem Sky" src="/images/pico8-lowmemsky2.gif" /></a>
 
 Some example Pico-8 games (click each to visit)
 </div>

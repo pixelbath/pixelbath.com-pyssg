@@ -12,6 +12,6 @@ Today, I tried to recreate [his work on the Google logo](http://www.flickr.com/p
 Hope you like it!
 
 <div class="image-caption aligncenter">
-<img alt="Google logo rendered in circles" src="../images/google-logo-generative.jpg" />
+<img alt="Google logo rendered in circles" src="/images/google-logo-generative.jpg" />
 Great Googly Moogly!
 </div>

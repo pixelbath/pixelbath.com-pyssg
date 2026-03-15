@@ -12,7 +12,7 @@ I've been a lover of video games for almost as long as I can remember, and an av
 
 <div class="image-caption alignleft">
 
-<img alt="Commodore 64" src="../images/Commodore-64-Computer.png" />
+<img alt="Commodore 64" src="/images/Commodore-64-Computer.png" />
 
 The "Breadbox"
 </div>
@@ -26,7 +26,7 @@ Sometime around third or fourth grade, I received a second-hand Commodore 64 (wi
 
 We learned to use [LOGO](https://en.wikipedia.org/wiki/Logo_(programming_language)), but the pen-based drawing didn't make much sense to me at the time. Why use such a slow method of drawing when you could just jam everything into a sprite and blit it anywhere you want? Anyway, after middle school I didn't do much with computers. <div class="image-caption alignright">
 
-<img alt="A1000" src="../images/A1000.jpg" />
+<img alt="A1000" src="/images/A1000.jpg" />
 
 How do I love thee? Let me `set count <theways$1000>`
 </div>

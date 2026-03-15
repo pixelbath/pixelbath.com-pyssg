@@ -1,6 +1,6 @@
 ## Blender Tutorials
 
-<img class="alignright" src="../images/blender_logo-medium.png" alt="Blender" />
+<img class="alignright" src="/images/blender_logo-medium.png" alt="Blender" />
 
 I've been using Blender a bunch lately and while there are plenty of video tutorials, written documentation quickly goes out of date, including even Blender official documentation and the Blender Wiki. Where applicable, specific tutorials or tips will have version-specific notation. I'm starting with 2.79, because that's what I know best.
 

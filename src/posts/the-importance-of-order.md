@@ -7,7 +7,7 @@ tags: blender, command line
 
 The order of things is important; even moreso when those things are command line arguments.
 
-<img alt="the venerable Blender default cube" class="aligncenter" src="../images/default-cube-render.png" />
+<img alt="the venerable Blender default cube" class="aligncenter" src="/images/default-cube-render.png" />
 
 After spending way too long (~30 minutes) trying to figure out why my background Blender renders were producing default cubes when that is clearly not what is in the scene, I finally looked at the console output and understood.
 
