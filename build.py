@@ -271,7 +271,7 @@ def process_pagination(base_path: str, posts: list, page_title: str = 'Posts') -
 
         # ensure path exists, and write file
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        output_path.write_text(rendered, encoding="utf-8")        
+        output_path.write_text(rendered, encoding="utf-8")
 
 # Create website Pages.
 process_page_folder('src/pages/', output_folder)

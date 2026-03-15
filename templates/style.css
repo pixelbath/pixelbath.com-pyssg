@@ -133,6 +133,7 @@ img.aligncenter {
 }
 .image-caption img {
     margin: 4px;
+    display: block;
 }
 .image-caption.alignleft img,
 .image-caption.alignright img {
@@ -150,6 +151,9 @@ img.aligncenter {
 .pagination {
     display: flex;
     justify-content: space-between;
+}
+.pagination a:only-child {
+    margin-left: auto;
 }
 
 .key-button {

@@ -37,7 +37,7 @@
 {% endfor %}
 
 <nav class="pagination">
-  {% if prev_url %}<a href="{{ prev_url }}" class="newer">← Newer Posts</a>{% endif %}
-  {% if next_url %}<a href="{{ next_url }}" class="older">Older Posts →</a>{% endif %}
+  {% if prev_url %}<a class="button-std" href="{{ prev_url }}" class="newer">← Newer Posts</a>{% endif %}
+  {% if next_url %}<a class="button-std" href="{{ next_url }}" class="older">Older Posts →</a>{% endif %}
 </nav>
 {% endblock %}
