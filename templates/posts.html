@@ -22,7 +22,7 @@
   <h2><a href="{{post.permalink}}">{{post.title}}</a></h2>
   {% if post.categories_list %}
   <p class="post-categories">
-    {% for cat in post.categories_list %}<a href="/category/{{ cat.slug }}/">{{ cat.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+    Categories: {% for cat in post.categories_list %}<a href="/category/{{ cat.slug }}/">{{ cat.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
   </p>
   {% endif %}
   <content>
