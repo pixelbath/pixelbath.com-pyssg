@@ -7,7 +7,7 @@ tags: adobe, android, browser, creative cloud, css, edge inspect, html, ios, sha
 
 <div class="image-caption alignright">
 
-![Adobe Shadow](../images/sd-logo.png)
+<img alt="Adobe Shadow" src="/images/sd-logo.png" />
 
 Adobe Shadow, not to be confused with DJ Shadow.
 </div>

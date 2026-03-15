@@ -29,6 +29,35 @@ a.logo svg {
 a.logo:hover svg {
     fill: #95cb14;
 }
+a.button-std {
+	transition: background-color,.3s;
+	background-color: #005afe;
+	background-repeat: no-repeat;
+	background-position: 4px 3px;
+	text-align: center;
+    margin: 0.1em;
+    padding: .4em .8em;
+    display: inline-block;
+    border-radius: 2px;
+	color: #fff;
+	font-size: 12px;
+	border: none;
+}
+
+/* file icons */
+a.file-icon {
+    padding-left: 24px;
+}
+a.icon-aco {
+    background-image: url(/images/icon-aco.png);
+}
+a.icon-vssettings {
+    background-image: url(/images/icon-vssettings.png);
+}
+a.icon-zip {
+    background-image: url(/images/icon-zip.png);
+}
+
 
 header {
     height:90px;
@@ -203,6 +232,11 @@ img.aligncenter {
     }
     h3 {
         color: #999;
+    }
+    a.button-std {
+        transition: background-color,.3s;
+        background-color: #90b7ff;
+        color: #333;
     }
     .image-caption {
         background-color: #555;

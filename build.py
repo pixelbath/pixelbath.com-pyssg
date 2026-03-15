@@ -64,6 +64,7 @@ def render_markdown(content: str) -> str:
     content = markdown_.convert(content)
     content = highlighting.highlight(content)
     content = render_keybuttons(content)
+    content = render_filelinks(content)
     content = render_emoji(content)
 
     # TODO: make this configurable
@@ -98,6 +99,15 @@ def render_keybuttons(content: str) -> str:
     content = re.sub(r'\[ option \]', '<span class="key-button"><span class="unicode">⌥</span> Option</span>', content, flags=re.IGNORECASE)
     content = re.sub(r'\[ (.) \]', key_upper_repl, content, flags=re.IGNORECASE)
     return content
+
+def render_filelinks(content: str) -> str:
+    # Matches plain <a href="..."> tags (no existing class) where the href points to a file with an extension
+    def filelink_repl(match):
+        href = match.group(1)
+        text = match.group(2)
+        ext = href.rsplit('.', 1)[-1].lower()
+        return f'<a class="button-std file-icon icon-{ext}" href="{href}">{text}</a>'
+    return re.sub(r'<a href="([^"]*\.[^/"<>]{1,10})">(.*?)</a>', filelink_repl, content)
 
 def render_emoji(content: str) -> str:
     mapping = [
