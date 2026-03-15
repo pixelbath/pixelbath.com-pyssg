@@ -29,7 +29,7 @@ Thanks, Thea!
     * ~~alignleft/alignright image max width (400px)~~
     * ~~aligncenter image max width~~
 * Doodads
-    * File type icons (clear-photoshops-swatch-palette, visual-studio-cuddly-braces)
+    * ~~File type icons (clear-photoshops-swatch-palette, visual-studio-cuddly-braces)~~
     * External link indicators
     * Syntax highlighting extras (line numbers, copy, etc)
     * Link buttons
