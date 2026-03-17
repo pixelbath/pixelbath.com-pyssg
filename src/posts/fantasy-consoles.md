@@ -19,16 +19,16 @@ The most appealing aspect of developing on these platforms is the artificially-i
 
 <img alt="Pico-8 Demo Cart" src="/images/jelpi_demo.gif" />
 
-Pico-8 demo cart
+<p>Pico-8 demo cart</p>
 </div>
 
 Let's take the first and probably most well-known fantasy console out there, Pico-8. If the Pico-8 system were a real console, it would have lower color specs and resolution than a Game Boy Color with two less buttons. Its specs are as follows:
 
-**Display resolution:** 128×128 pixels, 16 pre-set colors (through an additional palette 16 additional colors [have been discovered](https://www.lexaloffle.com/bbs/?tid=35253))  
-**Audio:** 4-channel "bloops" (basic FM synthesis) simultaneous  
-**Input:** Up to 4 six-button gamepads  
-**Memory:** Up to 32k for each cartridge  
-**Language:** Customized version of Lua  
+**Display resolution:** 128×128 pixels, 16 pre-set colors (through an additional palette 16 additional colors [have been discovered](https://www.lexaloffle.com/bbs/?tid=35253))
+**Audio:** 4-channel "bloops" (basic FM synthesis) simultaneous
+**Input:** Up to 4 six-button gamepads
+**Memory:** Up to 32k for each cartridge
+**Language:** Customized version of Lua
 
 Cartridges for this platform are stored in the lower bits of the color channels in a standard PNG image, so the "cartridge" file actually contains all the relevant game data. The system itself comes with a feature to browse finished games, so Pico-8 can be used as a standalone console.
 
@@ -41,7 +41,7 @@ While you'd think that being limited to 128×128 pixels with only 16 colors at a
 <a href="https://wombart.itch.io/league-of-pico"><img alt="League of Pico" src="/images/pico8-leagueofpico2.gif" /></a>
 <a href="https://www.lexaloffle.com/bbs/?tid=32724"><img alt="Low Mem Sky" src="/images/pico8-lowmemsky2.gif" /></a>
 
-Some example Pico-8 games (click each to visit)
+<p>Some example Pico-8 games (click each to visit)</p>
 </div>
 
 ## More Fantasy Consoles

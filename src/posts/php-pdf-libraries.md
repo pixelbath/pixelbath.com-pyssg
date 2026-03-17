@@ -10,7 +10,7 @@ tags: pdf, php
 
 <img alt="PDFs are easy! Like riding a...oh." src="/images/pdf-bike-crash.jpg" />
 
-PDFs are easy! Like riding a...oh.
+<p>PDFs are easy! Like riding a...oh.</p>
 </div>
 
 I wanted to do something I figured would be relatively simple. After all, we're doing it in .Net with a third-party library: Create a PDF with text from a database with vector graphics incorporated in the page. Turns out, it's pretty easy if you want a paid solution; numerous libraries exist for PHP that are non-free. If you insist on going free-only though, be warned: here be dragons (maybe).
@@ -56,7 +56,6 @@ Enter [FPDI](http://www.setasign.com/products/fpdi/about/). It's a library made 
 It requires FPDF, but also claims to be able to use TCPDF instead? I don't know. I was unable to find any way to merge to pages into the same page, but plenty of examples of PDF concatenation (not what I want). Perhaps I missed something, but it seemed fairly opaque to me. Exit FPDI.
 
 ## Screw It
-
 
 <div class="alignright">
 <img alt="'Automating' comes from the roots 'auto-' meaning 'self-', and 'mating', meaning 'screwing'." src="/images/xkcd-automation.png" />
