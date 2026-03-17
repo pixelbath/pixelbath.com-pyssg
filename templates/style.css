@@ -61,7 +61,7 @@ a.icon-zip {
 
 header {
     height:90px;
-    width: 960px;
+    width: 700px;
     margin: 0 auto;
 }
 header a {
@@ -89,7 +89,7 @@ nav.header a:hover {
 
 /* layout */
 .container {
-    width: 960px;
+    width: 700px;
     margin: 0 auto;
 }
 
@@ -118,36 +118,30 @@ img.alignleft {
     margin: 0.5em 1em 0 0;
     max-width: 400px;
 }
-img.aligncenter {
-    max-width: 800px;
+img.aligncenter, .image-caption.aligncenter {
+    max-width: 85%;
 }
 .image-caption {
     background-color: #d5d5d5;
     text-align: center;
-    display: inline-block;
     border-radius: 6px;
 }
 .image-caption.aligncenter {
-    transform: translateX(-50%);
-    margin-left: 50%;
+    margin: 0 auto;
 }
 .image-caption img {
     margin: 4px;
-    display: block;
 }
 .image-caption.alignleft img,
 .image-caption.alignright img {
     max-width: 400px;
+    display: block;
 }
 .image-caption p {
     margin: 0.5em;
     color: #333;
 }
 
-.container {
-    width: 960px;
-    margin: 0 auto;
-}
 .pagination {
     display: flex;
     justify-content: space-between;
