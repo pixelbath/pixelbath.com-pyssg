@@ -5,22 +5,14 @@ A small static site generator written in Python, based extemely heavily off [thi
 Thanks, Thea!
 
 ## Requirements
-* Python 3
-
-### First-time setup
-```
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-### Subsequent sessions
-```
-source venv/bin/activate
-```
+* [uv](https://docs.astral.sh/uv/)
+  * macOS: `brew install uv`
+  * Linux: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+  * Windows: `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
+* `uv sync`
 
 ## Build
-* `python3 build.py`
+* `uv run build.py`
 * Site will be in the `/output` folder
 
 # Features
