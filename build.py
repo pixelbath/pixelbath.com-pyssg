@@ -7,9 +7,8 @@ import markdown.extensions.fenced_code
 import frontmatter
 import jinja2
 import highlighting
-from shutil import copy, copytree
+from shutil import copy, copytree, rmtree
 from pathlib import Path
-# import pixelbathdark
 from pprint import pprint
 from bs4 import BeautifulSoup
 import re
@@ -21,6 +20,7 @@ output_images = output_folder + '/images'
 webroot = ''
 posts_per_page = 6
 posts_per_feed = 10
+theme = 'pixel'
 
 markdown_ = markdown.Markdown(
     extensions=[
@@ -34,7 +34,7 @@ markdown_ = markdown.Markdown(
 )
 
 jinja_env = jinja2.Environment(
-    loader=jinja2.FileSystemLoader('templates'),
+    loader=jinja2.FileSystemLoader([f'templates/{theme}', 'templates/base']),
 )
 jinja_env.globals['now'] = datetime.datetime.now()
 
@@ -46,7 +46,7 @@ posts_by_category = {}
 
 # delete and re-create output folders
 try:
-    # pathlib.Path(output_folder).unlink(missing_ok=True)
+    rmtree(output_folder, ignore_errors=True)
     if not os.path.exists(output_folder):
         os.makedirs(output_folder, mode=0o777)
     if not os.path.exists(output_static):
@@ -299,8 +299,12 @@ for slug, data in posts_by_category.items():
 css = highlighting.get_style_css('native')
 pathlib.Path("{}/static/pygments.css".format(output_folder)).write_text(css)
 
-# copy over static stylesheet
-copy('./templates/style.css', "{}/static/".format(output_folder))
+# copy over static stylesheet — theme override, falls back to base
+css_path = next(
+    p for p in [f'./templates/{theme}/style.css', './templates/base/style.css']
+    if os.path.exists(p)
+)
+copy(css_path, "{}/static/".format(output_folder))
 
 # copy static folders that need to be in the output
 copytree('./src/images', "{}/images".format(output_folder), dirs_exist_ok=True)
