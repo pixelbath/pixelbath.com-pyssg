@@ -9,6 +9,9 @@ If you actually bother preemptively reading your software documentation, you may
 
 At work, I'm using a 27" 1080p monitor/television as my secondary monitor. We use a model that has a similar color profile for presentations, so using this screen as a preview screen is essential. Otherwise, we'd have to keep our presentation displays unpacked and hooked up to a computer, transfer files, and so on. I won't get into (more) details, but suffice to say it would be a royal pain.
 
+
+![screenshot of window not filling the monitor{caption=You can stretch to the edges, but there's still a border.}](/images/windowed-afx-preview.png)
+
 <div class="image-caption aligncenter">
 <img alt="screenshot of window not filling the monitor" src="/images/windowed-afx-preview.png" />
 You can stretch to the edges, but there's still a border.
