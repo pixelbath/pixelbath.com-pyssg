@@ -1,11 +1,10 @@
 ### [Chapter 1: Introduction](chapter-1-introduction/)
 
-* Isometry
 * Isometric Pixel Art
 * Tools Required (Software)
 * Ideas/Research
 
-### [Chapter 2: Basic Pixel Art](chapter-2-basic-pixel-art/)
+### [Chapter 2: Basic Shapes](chapter-2-basic-shapes/)
 
 * The Basic Isometric Line
 * The Isometric Grid
@@ -13,13 +12,13 @@
 * Other Objects (Shapes)
 * Combining Shapes
 
-### [Chapter 3: Colors, Outlines, and Lighting](chapter-3-colors-outlines-and-lighting/)
+### [Chapter 3: Outlines, Colors, and Lighting](chapter-3-colors-outlines-and-lighting/)
 
+* Outlines
 * Colors
 * Lighting
-* Outlines & Highlights
 
-### [Chapter 4: Texturing]
+### [Chapter 4: Texturing](chapter-4-texturing/)
 
 * Brick Wall
 * Grass
