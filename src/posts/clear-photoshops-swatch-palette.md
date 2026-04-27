@@ -14,6 +14,7 @@ Everybody wants a rainbow, apparently.
 
 Whether you're trying to save a specific set of colors for later use, or simply want a palette with only your colors on it, you'll likely have encountered a problem that has been plaguing Photoshop for as long as I remember, and still hasn't been addressed in CS5 (or CS5.5, that I know of): **how do you clear the swatch palette**?
 
+<!-- more -->
 The only things you _can_ do from Photoshop's own menus are:
 
 * reset the swatch palette to the default colors

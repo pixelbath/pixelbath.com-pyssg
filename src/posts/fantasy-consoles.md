@@ -11,6 +11,7 @@ I'd been meaning to write for my blog, since I'm now posting more regularly on T
 
 While there are differing opinions on exactly _what_ constitutes a fantasy console, the basic idea is that it's a game development platform for hardware that doesn't exist. In some cases, there are entire _systems_ dedicated to maintaining the illusion that somewhere in an alternative universe, these video game consoles could have existed.
 
+<!-- more -->
 ## Why Fantasy Consoles?
 
 The most appealing aspect of developing on these platforms is the artificially-imposed constraint that working within a proscribed set of parameters affords. That's a mouthful, but it'd probably be simpler to explain the idea with some practical examples.

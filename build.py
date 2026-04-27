@@ -63,6 +63,7 @@ def render_markdown(content: str) -> str:
 
     markdown_.reset()
     content = markdown_.convert(content)
+    content = content.replace('<!-- more -->', '<span id="more"></span>')
     content = highlighting.highlight(content)
     content = render_keybuttons(content)
     content = render_filelinks(content)
@@ -253,6 +254,7 @@ def process_pagination(base_path: str, posts: list, page_title: str = 'Posts') -
         page_posts = []
         for key in list(posts.keys())[start_index:end_index]:
             post = posts[key]
+            post['truncated'] = '<!-- more -->' in post.content
             post.content = render_markdown(get_post_summary(markdown_heirarchy_down(post.content)))
             page_posts.append(post)
 

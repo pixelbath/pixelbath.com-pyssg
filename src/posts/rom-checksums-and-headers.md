@@ -7,6 +7,7 @@ tags: nex, nes
 
 Lately I've been futzing around with classic game ROMs a bit more. Since nearly day one of Nesticle hitting the Internet, I've been obsessed with emulation of classic computer systems. I love playing old video games, and I love learning more about the internals of the systems I cut my teeth on back in the day.
 
+<!-- more -->
 But this post isn't about nostalgia; it's about organizing games, specifically ROM files. While I'm fairly certain I've got several discs (and old HDDs) filled with variously-complete ROM sets for various platforms, these were mostly collected from newsgroups _waaay_ back in the day and as a result have a wide variety of headers, possible trainers, and intros. Nowadays, even the Internet Archive maintains full sets of "no-intro" ROMs donated by people who stayed in the scene far longer than I did.
 
 If you intend to organize such a non-trivial amount of games, you're gonna need some ROM utilities. The most well-known of these are clrmamepro, RomCenter, and RomVault. I'm sure there are others, but these are the big players. I'm not really going to speak about their various strengths/weaknesses, as that's a little outside the scope of this post.

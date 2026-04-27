@@ -15,6 +15,7 @@ tags: pdf, php
 
 I wanted to do something I figured would be relatively simple. After all, we're doing it in .Net with a third-party library: Create a PDF with text from a database with vector graphics incorporated in the page. Turns out, it's pretty easy if you want a paid solution; numerous libraries exist for PHP that are non-free. If you insist on going free-only though, be warned: here be dragons (maybe).
 
+<!-- more -->
 Since this was a low-priority project (read as: for fun), I needed something that's free, preferably open source. I tried four of the top PHP PDF libraries, excluding libraries that are part of a larger framework (i.e. Zend Framework has fairly robust PDF functionality, from what I've read).
 
 Skip to the bottom if you're not interested in a per-product breakdown.

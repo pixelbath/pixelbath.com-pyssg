@@ -28,6 +28,7 @@
   <content>
     {{post.content}}
   </content>
+  {% if post.truncated %}<a class="button-std" href="{{post.permalink}}#more">Read more...</a>{% endif %}
   {% if post.tags_list %}
   <footer class="post-tags">
     Tags: {% for tag in post.tags_list %}<a href="/tag/{{ tag.slug }}/">{{ tag.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
