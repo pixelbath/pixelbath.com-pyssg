@@ -96,8 +96,9 @@ nav.header a:hover { color: var(--text); background: var(--surface); }
 /* posts list */
 article {
     margin-bottom: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding: 1rem 1rem 2.5rem 1rem;
     border-bottom: 1px solid var(--border);
+    background-color: var(--bg);
 }
 article:last-of-type { border-bottom: none; }
 
