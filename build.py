@@ -321,6 +321,21 @@ for script in ['gallery.js']:
 # copy static folders that need to be in the output
 copytree('./src/images', "{}/images".format(output_folder), dirs_exist_ok=True)
 
+# generate .htaccess from redirects.txt
+redirects_src = pathlib.Path('./redirects.txt')
+if redirects_src.exists():
+    rules = []
+    for line in redirects_src.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+        parts = line.split()
+        if len(parts) == 2:
+            rules.append(f'Redirect 301 {parts[0]} {parts[1]}')
+    if rules:
+        pathlib.Path(f'{output_folder}/.htaccess').write_text('\n'.join(rules) + '\n')
+        print(f"Generated .htaccess with {len(rules)} redirect(s).")
+
 # Generate RSS
 template = jinja_env.get_template('rss.xml')
 rendered = template.render(posts=posts_by_date, last_updated=datetime.datetime.now(datetime.UTC))
