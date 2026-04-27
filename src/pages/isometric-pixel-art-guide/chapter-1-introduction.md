@@ -39,6 +39,8 @@ Chances are you've got an idea of what you want to do already, but try and keep 
 
 Once you've got your idea, it's sometimes still good to research it before sketching it out. This can be a good way to get examples of hidden details in a scene, building elements, or encounter new concepts. For example, if you are creating a building with deco elements, you might want to look for references like the Chrysler building, and other significant deco structures. Some buildings have a fire escape system, and others have distinctive patterns.
 
-[Read Chapter 2](../chapter-2-basic-pixel-art/)
+<nav class="pagination">
+  <a class="button-std" href="../chapter-2-basic-shapes/">Chapter 2 →</a>
+</nav>
 
 [Isometric Pixel Art Guide Home](../)

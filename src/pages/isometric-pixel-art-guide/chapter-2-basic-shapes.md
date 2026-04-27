@@ -114,10 +114,10 @@ At this point, you can pretty much treat these like certain name-brand interlock
 2.12: Draw the rest of the owl!.
 </div>
 
-
-[Read Chapter 1](../chapter-1-introduction/)
-
-[Read Chapter 3](../chapter-3-colors-outlines-and-lighting/)
+<nav class="pagination">
+  <a class="button-std" href="../chapter-1-introduction/">← Chapter 1</a>
+  <a class="button-std" href="../chapter-3-colors-outlines-and-lighting/">Chapter 3 →</a>
+</nav>
 
 [Isometric Pixel Art Guide Home](../)
 
