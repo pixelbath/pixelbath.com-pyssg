@@ -10,8 +10,10 @@ Email is probably the best way to get a hold of me, since I check it the most co
 
 I don't use a great deal of social networking sites for my professional life, but I can be found on the following:
 
+<div class="index-list" markdown="1">
 
-- [Twitter (not going to call it X)](https://twitter.com/pixelbath) - I don't visit here much anymore since it's turned into a hellscape of irrelevant notifications, constant changes, and Elon sycophants.
+- [Bluesky](https://pixelbath.bsky.social/)
 - [Mastodon](https://vis.social/pixelbath)
-- [Bluesky](https://pixelbath.bsky.social)
-- Discord - I'm frequently in either the [TIC-80](https://discord.gg/6fQRWvghqR) or [Fantasy Consoles](https://discord.gg/jcT9CXDgHB) servers.
+- [TIC-80 Discord](https://discord.gg/6fQRWvghqR) [Fantasy Consoles Discord](https://discord.gg/jcT9CXDgHB)
+
+</div>

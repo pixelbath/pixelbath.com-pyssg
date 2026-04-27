@@ -13,5 +13,5 @@ Hope you like it!
 
 <div class="image-caption aligncenter">
 <img alt="Google logo rendered in circles" src="/images/google-logo-generative.jpg" />
-Great Googly Moogly!
+<p>Great Googly Moogly!</p>
 </div>

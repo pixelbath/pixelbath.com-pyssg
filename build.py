@@ -306,6 +306,12 @@ css_path = next(
 )
 copy(css_path, "{}/static/".format(output_folder))
 
+# copy optional theme scripts
+for script in ['gallery.js']:
+    script_path = f'./templates/{theme}/{script}'
+    if os.path.exists(script_path):
+        copy(script_path, "{}/static/".format(output_folder))
+
 # copy static folders that need to be in the output
 copytree('./src/images', "{}/images".format(output_folder), dirs_exist_ok=True)
 
