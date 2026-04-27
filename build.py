@@ -134,23 +134,27 @@ import pathlib
 # build all non-blog pages using the folder layout in pages_path
 def process_page_folder(pages_path: str, output_folder: str) -> None:
     def process_file(source, relative_path):
-        # print(f"Processing page {source}")
-        content = render_markdown(source.read_text())
+        raw = source.read_text()
+        content = render_markdown(raw)
         if content is None:
             return
+
+        title = next(
+            (line.lstrip('#').strip() for line in raw.splitlines() if line.startswith('#')),
+            source.stem
+        )
 
         output_path = pathlib.Path(output_folder) / relative_path / f"{source.stem}/index.html"
         if source.stem.endswith('index'):
             output_path = pathlib.Path(output_folder) / relative_path / f"index.html"
 
         print(f"  {source} -> {output_path}")
-        
+
         # ensure output directory exists
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        
+
         template = jinja_env.get_template('page.html')
-        # TODO: do something useful with title (read with bs4 or parse the markdown)
-        rendered = template.render(title='Title', description='', content=content)
+        rendered = template.render(title=title, description='', content=content)
         with output_path.open('w', encoding='utf-8') as f:
             f.write(rendered)
 

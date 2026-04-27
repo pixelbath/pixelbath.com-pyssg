@@ -1,3 +1,5 @@
+## Isometric Pixel Art Guide
+
 ### [Chapter 1: Introduction](chapter-1-introduction/)
 
 * Isometric Pixel Art
