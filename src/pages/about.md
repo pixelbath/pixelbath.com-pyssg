@@ -1,10 +1,10 @@
 ## About
 
-This is the personal website of Michael Hoskins, a designer and programmer located in Northwest Montana.
+Hey, I'm Mike Hoskins, a designer and programmer located in Northwest Montana.
 
 ### Work
 
-I'm available for freelance requests on an ongoing basis. Send me an email via the [contact](/contact/) page, and check out my [work](/work/) page for samples.
+I'm currently not accepting freelance work, but am always open for discussion. You can reach me on my [contact](/contact/) page.
 
 ### Play
 
