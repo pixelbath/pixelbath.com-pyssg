@@ -2,9 +2,24 @@
 
 [TOC]
 
-Texture helps define the surface of an object in the real world, and pixel art is no different. It can make the difference between a plain green field and a rough, untended patch of grass.
+In addition to color, texture is an important element defining the surface of an object in the real world, and detailed pixel art is no different. Large, solid blocks of color can work well as a cartoony style, but texture adds detail and character.
 
-Texturing your objects and buildings make your pieces more interesting and pleasing to look at. Going for the plain coloured look can be good if you are giving it that cartoonish look, but usually it's a tad boring to look at. A building is usually made of bricks, so why not give it a nice brick texture on its walls. This can be achieved by following this small tutorial below.
+### Brick Wall
+
+Here's a small brick wall to get started. Once the basic brick lines are in place, the pattern can usually be copied and pasted to save some effort. Once basic lines are in place, then you can start adding detail to individual areas.
+
+<div class="image-caption aligncenter">
+<img alt="Brick wall" src="/images/isometric-pixel-art/ch4-brick-wall.png" />
+4.1: Brick wall steps.
+</div>
+
+To illustrate, here's how I drew the small wall above:
+
+1. **Basic outline**: it's a really thin cube! You can scale this up if you're going for larger scale; the idea is the same regardless.
+2. **Color**: Add some solid red shades according to the light source.
+3. **Bricklayer**: Brick patterns are laid in layers, so draw a series of horizontal lines evenly spaced apart. Try your best to get it to line up vertically, but if it doesn't you can either: adjust the height of the wall to match the pattern, or hide the spacing in some way. Here, I started from the top and hid the 1px gap with extra darkness.
+4. **Brick pattern**: Brick pattern alternates every row, but the pattern repeats every other row. Again, try your best to get these spaced, but masons actually _do_ cut bricks to fit sometimes, so don't sweat it too much.
+5. **Polish**: Bricks are a rough surface, so adding a few highlights and darker colors inside the mortar lines can help break up the regularity and add detail. I added a shadow and added some darker colors in the shadows to strengthen the lighting.
 
 <nav class="pagination">
   <a class="button-std" href="../chapter-3-colors-outlines-and-lighting/">← Chapter 3</a>

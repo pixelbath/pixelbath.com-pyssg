@@ -29,7 +29,7 @@ Unless you want all your pixel art to look flat, you will need to consider light
 3.2: A scene lit from the top-left.
 </div>
 
-To incorporate lighting, you first need to choose a light source. Most of the time, this will be the top left or top right of your drawing. Since this is isometric art, you do not need to worry about the lighting angle, as there is no real perspective. All objects in your scene should be lit from exactly the same direction.
+To incorporate lighting, you first need to choose a light source. Most of the time, this will be the top left or top right of your drawing. Since this is isometric art, you do not need to worry about the light spreading away from the source, as there is no real perspective. All objects in your scene should be lit from exactly the same direction.
 
 <nav class="pagination">
   <a class="button-std" href="../chapter-2-basic-shapes/">← Chapter 2</a>
