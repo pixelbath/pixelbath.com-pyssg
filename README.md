@@ -56,6 +56,8 @@ The remainder of the document is Markdown. The template system takes care of the
 
 The optional special tag `<!-- more -->` can be inserted on its own line to demarcate the post summary region. Content before this tag will be used in aggregate pages (`/page/#/` and `/category/category-name`). Most useful after a short paragraph or two. If omitted, the entire post is used in aggregate pages.
 
+Full post will be linked with a "Read more" button. Clicking it leads to an anchor where the tag was placed.
+
 ## Text to Emoji
 
 In cases where an emoji keyboard isn't available, the following strings are converted to emoji:
@@ -69,6 +71,8 @@ In cases where an emoji keyboard isn't available, the following strings are conv
 - `:P` -> 😛
 - `;P` -> 😜
 - `:melt:` -> 🫠
+- `:heart:` -> ❤️
+
 
 
 ## TODO

@@ -125,6 +125,7 @@ def render_emoji(content: str) -> str:
         (' :P',' 😛'),
         (' ;P',' 😜'),
         (':melt:','🫠'),
+        (':heart:','❤️'),
     ]
     for k, v in mapping:
         content = content.replace(k, v)
