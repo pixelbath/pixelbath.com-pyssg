@@ -72,44 +72,14 @@ In cases where an emoji keyboard isn't available, the following strings are conv
 
 
 ## TODO
-* ~~Base path to re-path all images to a common root~~
-    * ~~will also need to parse relative/absolute image links in MD~~
-* ~~Emoji plugin~~
-* ~~Navigation (links looks like WordPress routes)~~
-    * ~~Pagination - link format is `/page/pageNum/`~~
-        * ~~First page has no "Newer Posts", last has no "Older Posts"~~
-    * ~~Each post emits tags as links at the bottom - each tag links to `/tag/tag-name/`~~
-    * ~~Each post lists categories below the title - each cat links to `/category/category-name/`~~
-    * ~~Each post in the multi-post views links to its individual page~~
-* ~~RSS~~ validates
+* ~~RSS~~
+    * ~~validates~~
     * Get original post times again for that granularity - also use a default if not present
-* ~~Keys plugin~~
-    * ~~Update to exclude code blocks like RewriteRules~~
-    * ~~Update source files to use new syntax~~
-* Theme system
-    * ~~alignleft/alignright image max width (400px)~~
-    * ~~aligncenter image max width~~
 * Doodads
-    * ~~File type icons (clear-photoshops-swatch-palette, visual-studio-cuddly-braces)~~
     * External link indicators
     * Syntax highlighting extras (line numbers, copy, etc)
-    * ~~Link buttons~~
-* ~~Fix/implement functionality or content for:~~
-    * ~~host-based-ad-blocking - PHP snippet~~
-    * ~~generative-art-google-logo - image captions~~
-    * ~~the-importance-of-order - image resizing/linking (if necessary, maybe just restrict size unless explicitly linking higher res)~~
-* ~~Other handy tags~~
-    * ~~`<!-- more -->`~~ - works in summary pages and feed
-    * ~~`<!--TOC-->`~~ - now [TOC]
-* ~~Compile tags/cats~~
-    * ~~Generate pages for tags - `/tag/tag-name`~~
-    * ~~Generate pages for cats - `/category/category-name`~~
-* ~~All posts pagination - reverse chrono~~
-    * `/page/1/` redirect to `/` - .htaccess?
 * Comment system iframe
 * LESS?
 * ~~Dark mode, light mode~~
     * selector
 * Responsive design
-* Process gallery sections using bs4 - keep JS minimal
-* ~~Replicate existing site "close enough"~~
