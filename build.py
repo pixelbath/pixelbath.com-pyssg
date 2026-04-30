@@ -8,6 +8,7 @@ import frontmatter
 import jinja2
 import highlighting
 from shutil import copy, copytree, rmtree
+import pathlib
 from pathlib import Path
 from pprint import pprint
 from bs4 import BeautifulSoup
@@ -131,8 +132,6 @@ def render_emoji(content: str) -> str:
         content = content.replace(k, v)
     return content
 
-import pathlib
-
 # build all non-blog pages using the folder layout in pages_path
 def process_page_folder(pages_path: str, output_folder: str) -> None:
     def process_file(source, relative_path):
@@ -172,7 +171,7 @@ def process_page_folder(pages_path: str, output_folder: str) -> None:
     traverse_folder(base_folder)
 
 # build all blog posts using frontmatter to structure backward-compatible permalinks
-# also updates cumulative variables posts_by_date, posts_by_tag, posts_by_cat, post_tags, and post_cats for later use.
+# also updates cumulative variables posts_by_date, posts_by_tag, posts_by_cat, post_tags, and post_cats for later use
 def slugify(name: str) -> str:
     return re.sub(r'[^a-z0-9]+', '-', name.strip().lower()).strip('-')
 
@@ -283,17 +282,15 @@ def process_pagination(base_path: str, posts: list, page_title: str = 'Posts') -
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(rendered, encoding="utf-8")
 
-# Create website Pages.
 process_page_folder('src/pages/', output_folder)
 
-# Create website Posts.
 process_post_folder('src/posts/', output_folder)
 
-# Create pages of things.
+# pagination
 print(f"Process {len(posts_by_date)} posts by date.")
 process_pagination('.', posts_by_date)
 
-# Create tag and category archive pages.
+# tag/category archive pages
 print(f"Process {len(posts_by_tag)} tags.")
 for slug, data in posts_by_tag.items():
     process_pagination(f'tag/{slug}', data['posts'], page_title=f"Tag: {data['name']}")
@@ -302,11 +299,11 @@ print(f"Process {len(posts_by_category)} categories.")
 for slug, data in posts_by_category.items():
     process_pagination(f'category/{slug}', data['posts'], page_title=f"Category: {data['name']}")
 
-# write syntax highlighting stylesheet
+# syntax highlighting stylesheet
 css = highlighting.get_style_css('native')
 pathlib.Path("{}/static/pygments.css".format(output_folder)).write_text(css)
 
-# copy over static stylesheet — theme override, falls back to base
+# copy theme stylesheet; base stylesheet fallback
 css_path = next(
     p for p in [f'./templates/{theme}/style.css', './templates/base/style.css']
     if os.path.exists(p)
@@ -332,12 +329,15 @@ if redirects_src.exists():
             continue
         parts = line.split()
         if len(parts) == 2:
-            rules.append(f'Redirect 301 {parts[0]} {parts[1]}')
+            if parts[1].strip() == '/':
+                rules.append(f'Redirect 410 {parts[0]}')
+            else:
+                rules.append(f'Redirect 301 {parts[0]} {parts[1]}')
     if rules:
         pathlib.Path(f'{output_folder}/.htaccess').write_text('\n'.join(rules) + '\n')
         print(f"Generated .htaccess with {len(rules)} redirect(s).")
 
-# Generate RSS
+# RSS
 template = jinja_env.get_template('rss.xml')
 rendered = template.render(posts=posts_by_date, last_updated=datetime.datetime.now(datetime.UTC))
 output_path = pathlib.Path(output_folder) / 'feed.xml'
