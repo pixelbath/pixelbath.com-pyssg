@@ -319,6 +319,8 @@ for script in ['gallery.js']:
 # copy static folders that need to be in the output
 copytree('./src/images', "{}/images".format(output_folder), dirs_exist_ok=True)
 
+copy('./src/assets/favicon.png', output_folder)
+
 # generate .htaccess from redirects.txt
 redirects_src = pathlib.Path('./redirects.txt')
 if redirects_src.exists():
