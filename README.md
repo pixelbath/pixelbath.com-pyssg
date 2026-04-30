@@ -73,9 +73,8 @@ In cases where an emoji keyboard isn't available, the following strings are conv
 - `:melt:` -> 🫠
 - `:heart:` -> ❤️
 
-
-
 ## TODO
+
 * ~~RSS~~
     * ~~validates~~
     * Get original post times again for that granularity - also use a default if not present

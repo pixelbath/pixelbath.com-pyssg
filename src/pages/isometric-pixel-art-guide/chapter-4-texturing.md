@@ -21,6 +21,17 @@ To illustrate, here's how I drew the small wall above:
 4. **Brick pattern**: Brick pattern alternates every row, but the pattern repeats every other row. Again, try your best to get these spaced, but masons actually _do_ cut bricks to fit sometimes, so don't sweat it too much.
 5. **Polish**: Bricks are a rough surface, so adding a few highlights and darker colors inside the mortar lines can help break up the regularity and add detail. I added a shadow and added some darker colors in the shadows to strengthen the lighting.
 
+**The remainder of this content is being revised.**
+
+<!--
+### Grass
+
+### Glass
+
+### Dirt
+
+-->
+
 <nav class="pagination">
   <a class="button-std" href="../chapter-3-colors-outlines-and-lighting/">← Chapter 3</a>
   <div></div>
