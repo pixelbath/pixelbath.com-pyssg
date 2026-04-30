@@ -329,6 +329,7 @@ if redirects_src.exists():
             continue
         parts = line.split()
         if len(parts) == 2:
+            # mostly temporary until the pages drop from search indices
             if parts[1].strip() == '/':
                 rules.append(f'Redirect 410 {parts[0]}')
             else:
