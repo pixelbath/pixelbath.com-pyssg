@@ -3,6 +3,7 @@
 
 # users
 /author/admin/                                          /about/
+/contact/                                               /about/
 
 # tutorial sections -- not continuing these
 /tutorials/                                             /
