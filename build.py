@@ -128,7 +128,7 @@ def render_filelinks(content: str) -> str:
         text = match.group(2)
         ext = href.rsplit('.', 1)[-1].lower()
         return f'<a class="button-std file-icon icon-{ext}" href="{href}">{text}</a>'
-    return re.sub(r'<a href="([^"]*downloads/[^"]+\.[^/"<>]{1,10})">(.*?)</a>', filelink_repl, content)
+    return re.sub(r'href="([^"]*downloads/[^"]+\.[^/"<>]{1,10})">(.*?)</a>', filelink_repl, content)
 
 def render_emoji(content: str) -> str:
     mapping = [

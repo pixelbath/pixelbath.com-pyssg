@@ -112,7 +112,7 @@ aside a:hover { color: var(--accent); }
 .button-std, a.button-std {
     display: inline-block;
     padding: 0.3em 0.85em;
-    background: var(--accent);
+    background-color: var(--accent);
     color: var(--btn-fg);
     text-decoration: none;
     border-radius: 3px;
@@ -121,7 +121,7 @@ aside a:hover { color: var(--accent); }
     cursor: pointer;
 }
 .button-std:hover, a.button-std:hover {
-    background: var(--accent-h);
+    background-color: var(--accent-h);
     color: var(--btn-fg);
 }
 
