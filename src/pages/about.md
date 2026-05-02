@@ -40,8 +40,8 @@ We learned to use [LOGO](https://en.wikipedia.org/wiki/Logo_(programming_languag
 
 I occasionally used a friend's Amiga 1000 (with RAM expansion and **two** floppy drives) as often as I could, checking out the newest games along with its thriving demo scene.
 
-After high school I moved to Houston and began to learn HTML, and while helping others with websitessites, began to pick up some ASP, then PHP. I was tempted by the versatile allure of Java and its oft-repeated "Write-Once-Run-Anywhere!" mantra, but didn't understand what all those extra words meant: "Public static void main? That's ridiculous; why can't I just write the function name?"
+After high school I moved to Houston and began to learn HTML, and while helping others with websitessites, began to pick up some ASP, then PHP. I was tempted by the allure of Java and its "Write-Once-Run-Anywhere!" promise, but didn't understand what all those extra words meant: "Public static void main? That's ridiculous; why can't I just write the function name?"
 
-Ultimately, after getting my feet wet in a few more semicolon-based languages, I finally understood Java's now-not-so-cryptic code, but had already graduated to a career in Flash ActionScript development. Fun graphics, easy framework, ubiquitous player... what's not to like? Switched to c#/.Net, Flash died, and here we are.
+Ultimately, after getting my feet wet in a few more semicolon-based languages, I finally understood Java's now-not-so-cryptic code, but had already graduated to a career in Flash ActionScript development. Fun graphics, easy framework, ubiquitous player... what's not to like? My career ended up in c#/.Net, Flash died, and here we are.
 
-I mostly work in c# during the day, and my hobbies stay weird; showing up as homebrew game development: PSP and Wii games, TIC-80, and PICO-8. These game systems aren't Flash, but they run in browsers and most other platforms. I do occasional pixel art and Blender renders, sometimes picking up everyday streaks here and there.
+I mostly work in c# during the day, and my hobbies stay weird; showing up as homebrew game development: PSP and Wii games, TIC-80, and PICO-8. These game systems aren't Flash, but they run in browsers and most other platforms. I do occasional pixel art and Blender renders, sometimes picking up <a href="/everyday/">everyday</a> streaks here and there.
