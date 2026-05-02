@@ -14,6 +14,24 @@ from pprint import pprint
 from bs4 import BeautifulSoup
 import re
 
+RESET  = '\033[0m'
+BOLD   = '\033[1m'
+DIM    = '\033[2m'
+CYAN   = '\033[36m'
+GREEN  = '\033[32m'
+YELLOW = '\033[33m'
+MAGENTA= '\033[35m'
+WHITE  = '\033[97m'
+RED    = '\033[31m'
+
+def print_header():
+    now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    bar = '─' * 45
+    print(f"\n{CYAN}{bar}{RESET}")
+    print(f"{BOLD}{WHITE}  make a pixelbath  {DIM}•{RESET}{BOLD}{WHITE}  {now}{RESET}")
+    print(f"{CYAN}{bar}{RESET}\n")
+
+print_header()
 
 output_folder = './output'
 output_static = output_folder + '/static'
@@ -149,7 +167,7 @@ def process_page_folder(pages_path: str, output_folder: str) -> None:
         if source.stem.endswith('index'):
             output_path = pathlib.Path(output_folder) / relative_path / f"index.html"
 
-        print(f"  {source} -> {output_path}")
+        print(f"  {DIM}{source} -> {output_path}{RESET}")
 
         # ensure output directory exists
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -166,7 +184,7 @@ def process_page_folder(pages_path: str, output_folder: str) -> None:
             elif item.is_dir():
                 traverse_folder(item, os.path.join(relative_path, item.name))
 
-    print("Build individual pages.")
+    print(f"{CYAN}pages{RESET}")
     base_folder = pathlib.Path(pages_path)
     traverse_folder(base_folder)
 
@@ -179,9 +197,14 @@ def process_post_folder(posts_path: str, output_folder: str) -> None:
     post_sources = pathlib.Path(posts_path).glob('*.md')
     global posts_by_date, posts_by_tag, posts_by_category
 
-    print("Build individual post pages.")
+    print(f"{CYAN}posts{RESET}")
     for source in post_sources:
         post = frontmatter.load(str(source))
+
+        missing = [f for f in ('date', 'tags', 'categories') if not post.get(f)]
+        if missing:
+            print(f"  {RED}SKIP {source.name}: missing {', '.join(missing)}{RESET}")
+            continue
 
         # build tag and category lists with slugs for linking
         post_tags = [{'name': t.strip(), 'slug': slugify(t)} for t in post['tags'].split(',') if t.strip()]
@@ -207,7 +230,7 @@ def process_post_folder(posts_path: str, output_folder: str) -> None:
             posts_by_category.setdefault(cat['slug'], {'name': cat['name'], 'posts': {}})
             posts_by_category[cat['slug']]['posts'][post['date']] = post
 
-        print(f"  {post['title']} -> {output_path}")
+        print(f"  {GREEN}{post['title']}{RESET} {DIM}-> {output_path}{RESET}")
         template = jinja_env.get_template('post.html')
         rendered = template.render(post=post, content=content)
 
@@ -239,7 +262,7 @@ def markdown_heirarchy_down(in_content:str) -> str:
 
 # take a list of posts and generate pages of them
 def process_pagination(base_path: str, posts: list, page_title: str = 'Posts') -> None:
-    print(f"  Build pagination for {base_path}")
+    # print(f"  {DIM}paginate {base_path}{RESET}")
     global posts_per_page
     total_posts = len(posts)
     total_pages = max(1, (total_posts - 1) // posts_per_page + 1)
@@ -267,7 +290,7 @@ def process_pagination(base_path: str, posts: list, page_title: str = 'Posts') -
 
         next_url = f'{base_url}page/{page_number + 1}/' if page_number < total_pages else None
 
-        print(f"    Write {output_path}")
+        # print(f"    {DIM}write {output_path}{RESET}")
         template = jinja_env.get_template('posts.html')
         rendered = template.render(
             posts=page_posts,
@@ -287,16 +310,18 @@ process_page_folder('src/pages/', output_folder)
 process_post_folder('src/posts/', output_folder)
 
 # pagination
-print(f"Process {len(posts_by_date)} posts by date.")
+print(f"{CYAN}pagination{RESET}  {DIM}{len(posts_by_date)} posts{RESET}")
 process_pagination('.', posts_by_date)
 
 # tag/category archive pages
-print(f"Process {len(posts_by_tag)} tags.")
+print(f"{CYAN}tags{RESET}  {DIM}({len(posts_by_tag)}){RESET}")
 for slug, data in posts_by_tag.items():
+    print(f"  {MAGENTA}{data['name']}{RESET}: {YELLOW}{len(data['posts'])}{RESET}")
     process_pagination(f'tag/{slug}', data['posts'], page_title=f"Tag: {data['name']}")
 
-print(f"Process {len(posts_by_category)} categories.")
+print(f"{CYAN}categories{RESET}  {DIM}({len(posts_by_category)}){RESET}")
 for slug, data in posts_by_category.items():
+    print(f"  {MAGENTA}{data['name']}{RESET}: {YELLOW}{len(data['posts'])}{RESET}")
     process_pagination(f'category/{slug}', data['posts'], page_title=f"Category: {data['name']}")
 
 # syntax highlighting stylesheet
@@ -338,7 +363,7 @@ if redirects_src.exists():
                 rules.append(f'Redirect 301 {parts[0]} {parts[1]}')
     if rules:
         pathlib.Path(f'{output_folder}/.htaccess').write_text('\n'.join(rules) + '\n')
-        print(f"Generated .htaccess with {len(rules)} redirect(s).")
+        print(f"{CYAN}.htaccess{RESET}  {YELLOW}{len(rules)}{RESET} redirect(s)")
 
 # RSS
 template = jinja_env.get_template('rss.xml')
