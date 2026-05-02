@@ -349,6 +349,7 @@ copy('./src/assets/favicon.png', output_folder)
 copy('./src/.htaccess', output_folder)
 
 # RSS
+print(f"{CYAN}rss.xml{RESET}  {DIM}{len(posts_by_date)} posts{RESET}")
 template = jinja_env.get_template('rss.xml')
 rendered = template.render(posts=posts_by_date, last_updated=datetime.datetime.now(datetime.UTC))
 output_path = pathlib.Path(output_folder) / 'feed.xml'
