@@ -122,15 +122,13 @@ def render_keybuttons(content: str) -> str:
     return content
 
 def render_filelinks(content: str) -> str:
-    # Matches plain <a href="..."> tags (no existing class) where the href points to a file with an extension
+    # only match downloads/ with a file extension
     def filelink_repl(match):
         href = match.group(1)
         text = match.group(2)
         ext = href.rsplit('.', 1)[-1].lower()
-        if ext in ('html', 'htm', 'php', 'asp', 'aspx'):
-            return match.group(0)
         return f'<a class="button-std file-icon icon-{ext}" href="{href}">{text}</a>'
-    return re.sub(r'<a href="([^"]*\.[^/"<>]{1,10})">(.*?)</a>', filelink_repl, content)
+    return re.sub(r'<a href="([^"]*downloads/[^"]+\.[^/"<>]{1,10})">(.*?)</a>', filelink_repl, content)
 
 def render_emoji(content: str) -> str:
     mapping = [
@@ -167,7 +165,7 @@ def process_page_folder(pages_path: str, output_folder: str) -> None:
         if source.stem.endswith('index'):
             output_path = pathlib.Path(output_folder) / relative_path / f"index.html"
 
-        print(f"  {DIM}{source} -> {output_path}{RESET}")
+        print(f"  {GREEN}{source}{RESET} {DIM}-> {output_path}{RESET}")
 
         # ensure output directory exists
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -262,7 +260,9 @@ def markdown_heirarchy_down(in_content:str) -> str:
 
 # take a list of posts and generate pages of them
 def process_pagination(base_path: str, posts: list, page_title: str = 'Posts') -> None:
-    # print(f"  {DIM}paginate {base_path}{RESET}")
+    if base_path == '.':
+        print(f"  {DIM}paginate {base_path}{RESET}")
+
     global posts_per_page
     total_posts = len(posts)
     total_pages = max(1, (total_posts - 1) // posts_per_page + 1)
@@ -290,7 +290,8 @@ def process_pagination(base_path: str, posts: list, page_title: str = 'Posts') -
 
         next_url = f'{base_url}page/{page_number + 1}/' if page_number < total_pages else None
 
-        # print(f"    {DIM}write {output_path}{RESET}")
+        if base_path == '.':
+            print(f"    {DIM}write {output_path}{RESET}")
         template = jinja_env.get_template('posts.html')
         rendered = template.render(
             posts=page_posts,
@@ -313,16 +314,16 @@ process_post_folder('src/posts/', output_folder)
 print(f"{CYAN}pagination{RESET}  {DIM}{len(posts_by_date)} posts{RESET}")
 process_pagination('.', posts_by_date)
 
-# tag/category archive pages
-print(f"{CYAN}tags{RESET}  {DIM}({len(posts_by_tag)}){RESET}")
-for slug, data in posts_by_tag.items():
-    print(f"  {MAGENTA}{data['name']}{RESET}: {YELLOW}{len(data['posts'])}{RESET}")
-    process_pagination(f'tag/{slug}', data['posts'], page_title=f"Tag: {data['name']}")
-
+# category/tag archive pages
 print(f"{CYAN}categories{RESET}  {DIM}({len(posts_by_category)}){RESET}")
 for slug, data in posts_by_category.items():
     print(f"  {MAGENTA}{data['name']}{RESET}: {YELLOW}{len(data['posts'])}{RESET}")
     process_pagination(f'category/{slug}', data['posts'], page_title=f"Category: {data['name']}")
+
+print(f"{CYAN}tags{RESET}  {DIM}({len(posts_by_tag)}){RESET}")
+for slug, data in posts_by_tag.items():
+    print(f"  {MAGENTA}{data['name']}{RESET}: {YELLOW}{len(data['posts'])}{RESET}")
+    process_pagination(f'tag/{slug}', data['posts'], page_title=f"Tag: {data['name']}")
 
 # syntax highlighting stylesheet
 css = highlighting.get_style_css('native')
