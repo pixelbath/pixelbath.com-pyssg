@@ -345,25 +345,7 @@ for script in ['gallery.js']:
 copytree('./src/images', "{}/images".format(output_folder), dirs_exist_ok=True)
 
 copy('./src/assets/favicon.png', output_folder)
-
-# generate .htaccess from redirects.txt
-redirects_src = pathlib.Path('./redirects.txt')
-if redirects_src.exists():
-    rules = []
-    for line in redirects_src.read_text().splitlines():
-        line = line.strip()
-        if not line or line.startswith('#'):
-            continue
-        parts = line.split()
-        if len(parts) == 2:
-            # mostly temporary until the pages drop from search indices
-            if parts[1].strip() == '/':
-                rules.append(f'Redirect 410 {parts[0]}')
-            else:
-                rules.append(f'Redirect 301 {parts[0]} {parts[1]}')
-    if rules:
-        pathlib.Path(f'{output_folder}/.htaccess').write_text('\n'.join(rules) + '\n')
-        print(f"{CYAN}.htaccess{RESET}  {YELLOW}{len(rules)}{RESET} redirect(s)")
+copy('./src/.htaccess', output_folder)
 
 # RSS
 template = jinja_env.get_template('rss.xml')

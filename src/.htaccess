@@ -1,0 +1,30 @@
+Redirect 301 /author/admin/ /about/
+Redirect 301 /contact/ /about/
+Redirect 301 /2020/03/c-value-does-not-fall-within-the-expected-range/ /2020/03/csharp-value-does-not-fall-within-expected-range/
+
+# no more app tutorials
+Redirect 410 /tutorials/
+Redirect 410 /after-effects-tutorials/
+Redirect 410 /after-effects-tutorials/expressions-the-basics/
+Redirect 410 /blender-tutorials/
+Redirect 410 /blender-tutorials/selecting-things/
+Redirect 410 /blender-tutorials/editing-modes/
+Redirect 410 /photoshop-tutorials/
+Redirect 410 /photoshop-tutorials/word-balloons-part-one/
+Redirect 410 /photoshop-tutorials/perspective-distortion/
+
+# "old man shouts at cloud"
+Redirect 410 /2008/11/movable-type-installation-on-windows-server-2003/
+Redirect 410 /2009/01/jsfl-batch-publish-flash-files/
+Redirect 410 /2009/01/block-windows-live-messenger-ads/
+Redirect 410 /2009/07/adobe-cs4-issues-and-mini-review/
+Redirect 410 /2009/08/dual-monitors-wallpaper-techniques/
+Redirect 410 /2009/08/get-trapcode-plugins-to-show-in-cs4/
+Redirect 410 /2010/04/new-must-have-ipad-peripheral/
+Redirect 410 /2010/06/adobe-photoshop-cs-under-windows-7/
+Redirect 410 /2010/10/fix-the-photoshop-clipboard-all-versions/
+Redirect 410 /2011/05/adobe-creative-suite-5-5-worth-the-upgrade/
+Redirect 410 /2011/05/wordpress-tip-adding-custom-menus-to-a-theme/
+Redirect 410 /2011/06/quick-tip-permissions-issue-with-adobe-extension-manager/
+Redirect 410 /2011/06/referrer-spam-trick/
+Redirect 410 /2012/03/adobe-shadow-speed-up-design-on-mobile/
