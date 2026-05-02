@@ -75,14 +75,9 @@ In cases where an emoji keyboard isn't available, the following strings are conv
 
 ## TODO
 
-* ~~RSS~~
-    * ~~validates~~
-    * Get original post times again for that granularity - also use a default if not present
 * Doodads
     * External link indicators
     * Syntax highlighting extras (line numbers, copy, etc)
-* Comment system iframe
-* LESS?
+* Comment system?
 * ~~Dark mode, light mode~~
     * selector
-* Responsive design
