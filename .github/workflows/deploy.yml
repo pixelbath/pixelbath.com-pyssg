@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Build site
+        run: uv run build.py
+
+      - name: Deploy
+        env:
+          SSH_KEY:     ${{ secrets.SSH_KEY }}
+          SSH_HOST:    ${{ secrets.SSH_HOST }}
+          SSH_USER:    ${{ secrets.SSH_USER }}
+          SSH_PORT:    ${{ secrets.SSH_PORT }}
+          DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${SSH_PORT:-22}" -H "$SSH_HOST" >> ~/.ssh/known_hosts
+          rsync -az --delete \
+            --exclude='/everyday/' \
+            -e "ssh -i ~/.ssh/deploy_key -p ${SSH_PORT:-22}" \
+            output/ "$SSH_USER@$SSH_HOST:$DEPLOY_PATH/"
