@@ -259,7 +259,7 @@ def markdown_heirarchy_down(in_content:str) -> str:
 
 
 # take a list of posts and generate pages of them
-def process_pagination(base_path: str, posts: list, page_title: str = 'Posts') -> None:
+def process_pagination(base_path: str, posts: list, page_title: str = 'posts') -> None:
     if base_path == '.':
         print(f"  {DIM}paginate {base_path}{RESET}")
 
