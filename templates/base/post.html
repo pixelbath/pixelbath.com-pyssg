@@ -13,10 +13,10 @@
 
 {% block content %}
 <article>
+  <h1>{{post.title}}</h1>
   <aside>
     <time>{{post['date'].strftime('%B %d, %Y')}}</time> - <a href="/">view all posts</a>
   </aside>
-  <h1>{{post.title}}</h1>
   {% if post.categories_list %}
   <p class="post-categories">
     Categories: {% for cat in post.categories_list %}<a href="/category/{{ cat.slug }}/">{{ cat.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
