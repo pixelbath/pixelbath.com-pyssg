@@ -20,7 +20,9 @@
 
   {% block meta %}{% endblock %}
 </head>
-<canvas id="starfield"></canvas>
+<div class="star-layer" id="stars-far"></div>
+<div class="star-layer" id="stars-mid"></div>
+<div class="star-layer" id="stars-near"></div>
 <header>
   <a href="/" class="logo">
     <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 1374 533">
@@ -51,60 +53,21 @@
 <script src="/static/gallery.js"></script>
 <script>
 (function () {
-    const canvas = document.getElementById('starfield');
-    const ctx = canvas.getContext('2d');
-    const N = 120;
-    const stars = [];
+    const layers = [
+        { el: document.getElementById('stars-far'),  speed: 0.05 },
+        { el: document.getElementById('stars-mid'),  speed: 0.12 },
+        { el: document.getElementById('stars-near'), speed: 0.22 },
+    ];
 
-    function isDark() {
-        return window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-
-    function seed() {
-        stars.length = 0;
-        for (let i = 0; i < N; i++) {
-            const depth = Math.random() * 0.9 + 0.1;
-            stars.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                size: Math.max(1, Math.round(depth * 5)),
-                depth: depth,
-            });
+    function update() {
+        const y = Math.max(0, window.scrollY);
+        for (const { el, speed } of layers) {
+            el.style.backgroundPosition = `0 -${(y * speed).toFixed(1)}px`;
         }
     }
 
-    let running = false;
-
-    function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        const dark = isDark();
-        const scroll = window.scrollY;
-        for (const s of stars) {
-            const alpha = (0.1 + s.depth * 0.05).toFixed(3);
-            ctx.fillStyle = dark ? `rgba(255,255,255,${alpha})` : `rgba(0,0,0,${alpha})`;
-            const y = ((s.y - scroll * s.depth * 0.25) % canvas.height + canvas.height) % canvas.height;
-            ctx.fillRect(Math.floor(s.x), Math.floor(y), s.size, s.size);
-        }
-        running = false;
-    }
-
-    function scheduleRedraw() {
-        if (!running) {
-            running = true;
-            requestAnimationFrame(draw);
-        }
-    }
-
-    resize();
-    seed();
-    scheduleRedraw();
-    window.addEventListener('scroll', scheduleRedraw);
-    window.addEventListener('resize', function () { resize(); seed(); scheduleRedraw(); });
+    window.addEventListener('scroll', update, { passive: true });
+    update();
 }());
 </script>
 </body>

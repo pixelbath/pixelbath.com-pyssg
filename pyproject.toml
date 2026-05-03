@@ -14,3 +14,8 @@ dependencies = [
     "pymdown-extensions>=10.21",
     "python-frontmatter>=1.1.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pillow>=12.2.0",
+]
