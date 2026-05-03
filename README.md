@@ -39,7 +39,6 @@ For longer documents, a table of contents with clickable heading links can be in
 ## Post format
 This was built to replace a WordPress blog, so everything needed to generate various metadata links is contained in the Markdown filename combined with FrontMatter blocks at the top of each post:
 
-
 As an example, for the URL `2011/03/after-effects-fullscreen-preview/`, the URL slug (the text bit) is provided by the filename `after-effects-fullscreen-preview.md`. The date portion, along with categories and tag data is provided by a FrontMatter block at the top of the file:
 ```yaml
 ---
