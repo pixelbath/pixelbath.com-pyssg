@@ -1,6 +1,7 @@
 Redirect 301 /author/admin/ /about/
 Redirect 301 /contact/ /about/
 Redirect 301 /2020/03/c-value-does-not-fall-within-the-expected-range/ /2020/03/csharp-value-does-not-fall-within-expected-range/
+Redirect 301 /isometric-pixel-art-guide/chapter-2-basic-pixel-art/ /isometric-pixel-art-guide/chapter-2-basic-shapes/
 
 # no more app tutorials
 Redirect 410 /tutorials/
