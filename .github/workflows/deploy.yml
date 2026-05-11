@@ -33,6 +33,7 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p "${SSH_PORT:-22}" -H "$SSH_HOST" >> ~/.ssh/known_hosts
           rsync -az --delete \
+            --exclude='/downloads/' \
             --exclude='/everyday/' \
             -e "ssh -i ~/.ssh/deploy_key -p ${SSH_PORT:-22}" \
             output/ "$SSH_USER@$SSH_HOST:$DEPLOY_PATH/"
