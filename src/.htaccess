@@ -2,6 +2,15 @@ Redirect 301 /author/admin/ /about/
 Redirect 301 /contact/ /about/
 Redirect 301 /2020/03/c-value-does-not-fall-within-the-expected-range/ /2020/03/csharp-value-does-not-fall-within-expected-range/
 Redirect 301 /isometric-pixel-art-guide/chapter-2-basic-pixel-art/ /isometric-pixel-art-guide/chapter-2-basic-shapes/
+Redirect 301 /isometric-pixel-art-guide/ch1.php /isometric-pixel-art-guide/chapter-1-introduction/
+Redirect 301 /isometric-pixel-art-guide/ch2.php /isometric-pixel-art-guide/chapter-2-basic-shapes/
+Redirect 301 /isometric-pixel-art-guide/ch3.php /isometric-pixel-art-guide/chapter-3-colors-outlines-and-lighting/
+Redirect 301 /isometric-pixel-art-guide/ch4.php /isometric-pixel-art-guide/chapter-4-texturing/
+Redirect 301 /isometric-pixel-art-guide/ch5.php /isometric-pixel-art-guide/
+
+Redirect 301 /everydays/ /everyday/
+Redirect 301 /everydays/year/ /everyday/
+Redirect 301 /everydays/years /everyday/
 
 # no more app tutorials
 Redirect 410 /tutorials/
